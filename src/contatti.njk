@@ -15,9 +15,11 @@ lead: Siamo aperti a collaborazioni con università, enti del terzo settore, all
         <div class="contact-detail"><div class="label">Forma</div><div class="value">{{ site.legalForm }} · iscritta al RUNTS</div></div>
       </div>
       <div>
-        <!-- Cloudflare Pages Forms: l'attributo data-static-form-name attiva la raccolta lato Cloudflare.
-             Va abilitato "Forms" nel progetto Pages. Le risposte si leggono dalla dashboard Cloudflare. -->
-        <form class="contact-form" method="POST" data-static-form-name="contatti">
+        <form id="contact-form" class="contact-form">
+          <input type="hidden" name="access_key" value="d44d6fc6-3352-4171-9dfd-8dd1f07c48e6">
+          <input type="hidden" name="subject" value="Nuovo messaggio dal sito Camelid Research Studies">
+          <input type="hidden" name="from_name" value="Sito Camelid Research Studies">
+
           <label for="nome">Nome e cognome</label>
           <input id="nome" type="text" name="nome" placeholder="Mario Rossi" required>
 
@@ -30,12 +32,47 @@ lead: Siamo aperti a collaborazioni con università, enti del terzo settore, all
           <label for="messaggio">Messaggio</label>
           <textarea id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua richiesta o proposta" required></textarea>
 
-          <!-- honeypot anti-spam: nascosto agli utenti, riempito solo dai bot -->
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <!-- honeypot anti-spam di Web3Forms: nascosto, lo riempiono solo i bot -->
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
           <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Invia messaggio</button>
+          <p id="form-result" role="status" aria-live="polite" style="display:none;margin-top:1rem;font-size:14px"></p>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var result = document.getElementById('form-result');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Invio in corso…';
+    result.style.display = 'none';
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.reset();
+          result.style.color = 'var(--accent-deep)';
+          result.textContent = 'Grazie, il messaggio è stato inviato. Ti risponderemo al più presto.';
+        } else {
+          result.style.color = '#b00020';
+          result.textContent = 'Si è verificato un errore. Riprova o scrivici via email.';
+        }
+        result.style.display = 'block';
+      })
+      .catch(function () {
+        result.style.color = '#b00020';
+        result.textContent = 'Errore di rete. Riprova o scrivici via email.';
+        result.style.display = 'block';
+      })
+      .finally(function () { btn.disabled = false; btn.textContent = original; });
+  });
+})();
+</script>
