@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Contatti
+eyebrow: Contatti
+heading: Collabora <em>con noi</em>
+lead: Siamo aperti a collaborazioni con università, enti del terzo settore, allevatori e professionisti. Scrivici per ricerca, partnership o informazioni.
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="split">
+      <div class="contact-info">
+        <p>Raccontaci la tua richiesta o la tua proposta: ti risponderemo al più presto.</p>
+        <div class="contact-detail"><div class="label">Email</div><div class="value"><a href="mailto:{{ site.email }}">{{ site.email }}</a></div></div>
+        <div class="contact-detail"><div class="label">Sede</div><div class="value">Italia</div></div>
+        <div class="contact-detail"><div class="label">Forma</div><div class="value">{{ site.legalForm }} · iscritta al RUNTS</div></div>
+      </div>
+      <div>
+        <!-- Cloudflare Pages Forms: l'attributo data-static-form-name attiva la raccolta lato Cloudflare.
+             Va abilitato "Forms" nel progetto Pages. Le risposte si leggono dalla dashboard Cloudflare. -->
+        <form class="contact-form" method="POST" data-static-form-name="contatti">
+          <label for="nome">Nome e cognome</label>
+          <input id="nome" type="text" name="nome" placeholder="Mario Rossi" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="nome@esempio.it" required>
+
+          <label for="organizzazione">Organizzazione / Ente (opzionale)</label>
+          <input id="organizzazione" type="text" name="organizzazione" placeholder="Università, associazione, allevamento…">
+
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua richiesta o proposta" required></textarea>
+
+          <!-- honeypot anti-spam: nascosto agli utenti, riempito solo dai bot -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Invia messaggio</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

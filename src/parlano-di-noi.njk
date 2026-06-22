@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Parlano di noi
+eyebrow: Rassegna
+heading: Parlano <em>di noi</em>
+lead: Articoli, interviste e citazioni dell'associazione sulla stampa e nei media di settore.
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="empty-note">Quando ci saranno uscite stampa, interviste o citazioni le raccoglieremo qui. Sotto un esempio di impaginazione (contenuti segnaposto).</div>
+    <div class="rows">
+      {% set esempi = [
+        {meta:"Testata", title:"Titolo dell'articolo che parla dell'associazione", sub:"Nome della testata · Data"},
+        {meta:"Intervista", title:"Intervista a un membro del board", sub:"Podcast o rivista · Data"}
+      ] %}
+      {% for r in esempi %}
+      <a class="row" href="#">
+        <span class="meta">{{ r.meta }}</span>
+        <span class="title">{{ r.title }}<small>{{ r.sub }}</small></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

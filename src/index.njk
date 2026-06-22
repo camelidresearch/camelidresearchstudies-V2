@@ -1,0 +1,80 @@
+---
+layout: base.njk
+title: ""
+hideHeader: true
+description: "Camelid Research Studies APS — associazione di promozione sociale per la ricerca, il benessere animale e lo studio della relazione tra esseri umani e camelidi."
+permalink: /
+---
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="eyebrow">{{ site.legalForm }} · Italia</div>
+      <h1>Scienza, benessere<br>e <em>camelidi</em></h1>
+      <p class="lead">{{ site.tagline }}. Promuoviamo la ricerca scientifica sulla salute e sul benessere di alpaca e lama, la formazione e la collaborazione tra professionisti, allevatori e istituzioni.</p>
+      <div class="actions">
+        <a href="/progetti/" class="btn-primary">Le nostre attività &rarr;</a>
+        <a href="/contatti/" class="btn-outline">Collabora con noi</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Aree di attività</div></div>
+        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Progetti 2026&ndash;2027</div></div>
+        <div><div class="hero-stat-num">APS</div><div class="hero-stat-label">Iscritta al RUNTS</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-logo-img" src="/assets/img/logo.png" alt="Logo Camelid Research Studies APS">
+      <div class="hero-title-main">Camelid Research Studies</div>
+      <div class="hero-title-sub">{{ site.legalForm }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="split center">
+      <div>
+        <div class="eyebrow">Chi siamo</div>
+        <h2>Un'associazione nata dalla <em>passione per i camelidi</em></h2>
+      </div>
+      <div class="prose">
+        <p>Camelid Research Studies APS nasce per unire ricerca scientifica, medicina veterinaria, benessere animale e studio della relazione tra esseri umani e camelidi, contribuendo alla crescita delle conoscenze e alla diffusione di buone pratiche nel settore.</p>
+        <p>La nostra missione è promuovere la conoscenza, la salute e il benessere dei camelidi sudamericani domestici attraverso la ricerca, la formazione, la divulgazione e la collaborazione tra professionisti, allevatori, ricercatori e istituzioni.</p>
+        <p><a class="btn-outline" href="/chi-siamo/">Scopri di più &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">Aree di attività</div>
+    <h2>Otto ambiti di <em>lavoro</em></h2>
+    <div class="card-grid">
+      {% for a in aree %}
+      <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3><p>{{ a.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">Progetti</div>
+    <h2>Primi progetti <em>2026&ndash;2027</em></h2>
+    <div class="card-grid">
+      {% for p in progetti %}
+      <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
+      {% endfor %}
+    </div>
+    <div class="actions"><a href="/progetti/" class="btn-outline">Tutti i progetti &rarr;</a></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Collabora con noi</h2>
+    <p>Siamo aperti alla collaborazione con veterinari, università, centri di ricerca, associazioni ed enti pubblici e privati che condividano i nostri obiettivi.</p>
+    <a href="/contatti/" class="btn-outline">Scrivici &rarr;</a>
+  </div>
+</section>

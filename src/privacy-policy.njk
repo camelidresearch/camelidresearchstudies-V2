@@ -1,0 +1,45 @@
+---
+layout: base.njk
+title: Privacy Policy
+eyebrow: Informativa
+heading: Privacy &amp; Cookie Policy
+lead: "Informativa sul trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR), relativa al presente sito web."
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="prose" style="max-width:740px">
+
+      <p style="margin-bottom:2rem">La presente informativa riguarda esclusivamente il trattamento dei dati personali effettuato attraverso questo sito web. Non riguarda altre attività dell'associazione, per le quali sono fornite informative dedicate.</p>
+
+      <h3>1. Titolare del trattamento</h3>
+      <p>Il Titolare del trattamento è <strong>{{ site.titolare.denominazione }}</strong> ({{ site.legalForm }}), iscritta al {{ site.titolare.registro }}.<br>
+      Codice Fiscale: {{ site.titolare.codiceFiscale }}<br>
+      Sede: {{ site.titolare.indirizzo }}<br>
+      Legale rappresentante: {{ site.titolare.legaleRappresentante }}<br>
+      Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+      <h3>2. Dati trattati e finalità</h3>
+      <p><strong>a) Dati di navigazione.</strong> I sistemi informatici e le procedure software preposte al funzionamento del sito acquisiscono, nel corso del normale esercizio, alcuni dati la cui trasmissione è implicita nell'uso dei protocolli di comunicazione di Internet (ad esempio indirizzo IP, tipo di browser e dispositivo, data e ora della richiesta). Questi dati sono utilizzati al solo fine di erogare il sito, garantirne la sicurezza e prevenire abusi. Base giuridica: legittimo interesse del Titolare (art. 6.1.f GDPR).</p>
+      <p><strong>b) Dati forniti volontariamente tramite il modulo di contatto.</strong> Compilando il modulo nella pagina Contatti vengono trattati nome e cognome, indirizzo email, eventuale organizzazione e il contenuto del messaggio. La finalità è esclusivamente rispondere alla richiesta inviata. Base giuridica: riscontro a una richiesta dell'interessato e consenso prestato con l'invio del messaggio (art. 6.1.a/b GDPR). Il conferimento è facoltativo, ma necessario per ottenere una risposta.</p>
+      <p><strong>c) Statistiche di navigazione.</strong> Il sito utilizza Cloudflare Web Analytics, uno strumento di statistica aggregata e rispettoso della privacy che <strong>non utilizza cookie</strong> e non traccia gli utenti tra siti diversi né ne crea profili. I dati raccolti sono anonimi e aggregati (ad esempio numero di pagine viste, provenienza, tipo di dispositivo). Base giuridica: legittimo interesse del Titolare (art. 6.1.f GDPR).</p>
+
+      <h3>3. Destinatari dei dati e trasferimenti</h3>
+      <p>I dati non sono diffusi né ceduti a terzi per finalità commerciali. Per l'erogazione del sito, la gestione del modulo di contatto e le statistiche, il Titolare si avvale di <strong>Cloudflare, Inc.</strong>, che agisce in qualità di responsabile del trattamento (servizi Cloudflare Pages, Pages Forms e Web Analytics). Tale fornitore può comportare il trasferimento di dati verso gli Stati Uniti: il trasferimento è regolato dalle Clausole Contrattuali Standard della Commissione Europea e dall'adesione del fornitore al EU-US Data Privacy Framework.</p>
+
+      <h3>4. Periodo di conservazione</h3>
+      <p>I dati di navigazione sono conservati per il tempo tecnicamente necessario alla sicurezza del sito. I messaggi inviati tramite il modulo di contatto sono conservati per il tempo necessario a gestire la richiesta e, comunque, non oltre 24 mesi dall'ultimo contatto, salvo obblighi di legge. I dati statistici aggregati sono conservati in forma anonima.</p>
+
+      <h3>5. Cookie</h3>
+      <p>Questo sito <strong>non utilizza cookie di profilazione o di marketing</strong> e non richiede pertanto alcun banner di consenso. Possono essere presenti esclusivamente cookie tecnici o di sicurezza impostati dall'infrastruttura Cloudflare per garantire il corretto funzionamento e la protezione del sito (ad esempio contro traffico automatizzato malevolo); tali cookie sono necessari e non richiedono consenso. I caratteri tipografici sono ospitati direttamente su questo sito, senza richieste a servizi esterni.</p>
+
+      <h3>6. Diritti dell'interessato</h3>
+      <p>L'interessato può in ogni momento esercitare i diritti previsti dagli artt. 15-22 del GDPR: accesso, rettifica, cancellazione, limitazione, opposizione al trattamento e portabilità dei dati. Le richieste vanno inviate a <a href="mailto:{{ site.email }}">{{ site.email }}</a>. L'interessato ha inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).</p>
+
+      <h3>7. Modifiche</h3>
+      <p>Il Titolare si riserva di aggiornare la presente informativa. Le modifiche saranno pubblicate su questa pagina.</p>
+
+      <p style="margin-top:2rem;font-size:13px;color:var(--light-muted)">Ultimo aggiornamento: {{ site.privacyUpdated }}</p>
+
+    </div>
+  </div>
+</section>

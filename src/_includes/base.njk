@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.legalName }}</title>
+  <meta name="description" content="{{ description or site.tagline }}">
+  <link rel="icon" type="image/png" href="/assets/img/logo-128.png">
+  <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  {% include "partials/nav.njk" %}
+  <main>
+    {% if not hideHeader %}
+    <header class="page-header">
+      <div class="hero-dots"></div>
+      <div class="inner">
+        {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+        <h1>{{ heading or title | safe }}</h1>
+        {% if lead %}<p class="lead">{{ lead | safe }}</p>{% endif %}
+      </div>
+    </header>
+    {% endif %}
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  {% if site.cloudflareAnalyticsToken %}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflareAnalyticsToken }}"}'></script>
+  {% endif %}
+</body>
+</html>

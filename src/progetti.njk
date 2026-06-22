@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Progetti
+eyebrow: Progetti e attività
+heading: Dalla ricerca alle <em>buone pratiche</em>
+lead: Le aree in cui operiamo e i primi progetti che stiamo sviluppando per la salute e il benessere dei camelidi.
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">In sviluppo · 2026&ndash;2027</div>
+    <h2>I primi <em>progetti</em></h2>
+    <div class="card-grid">
+      {% for p in progetti %}
+      <div class="card on-soft"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">Aree di attività</div>
+    <h2>Otto ambiti di <em>lavoro</em></h2>
+    <p class="lead">Gli obiettivi strategici attorno a cui costruiamo ricerca, formazione e divulgazione.</p>
+    <div class="card-grid">
+      {% for a in aree %}
+      <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3><p>{{ a.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Vuoi proporre un progetto?</h2>
+    <p>Cerchiamo partner per ricerca, raccolta dati e formazione. Raccontaci la tua idea o il tuo contesto.</p>
+    <a href="/contatti/" class="btn-outline">Scrivici &rarr;</a>
+  </div>
+</section>

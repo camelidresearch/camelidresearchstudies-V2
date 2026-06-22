@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Board
+eyebrow: Le persone
+heading: Il <em>board</em>
+lead: Veterinari, ricercatori e professionisti che guidano l'associazione. (Nomi, ruoli e biografie sono segnaposto, in attesa dei contenuti definitivi.)
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="people-grid">
+      {% set ruoli = ["Presidente","Vicepresidente","Segretario","Tesoriere","Consigliere","Consigliere"] %}
+      {% for r in ruoli %}
+      <div class="person">
+        <div class="avatar">N{{ loop.index }}</div>
+        <h3>Nome Cognome</h3>
+        <div class="role">{{ r }}</div>
+        <p>Breve biografia segnaposto: ambito di competenza, formazione ed esperienza nel settore dei camelidi.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Risorse e pubblicazioni
+eyebrow: Risorse e pubblicazioni
+heading: Conoscenza <em>condivisa</em>
+lead: Pubblicazioni, materiali divulgativi e approfondimenti sulla salute e sul benessere dei camelidi.
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="empty-note">L'associazione è di recente costituzione: le prime pubblicazioni e i materiali divulgativi arriveranno con l'avvio dei progetti 2026&ndash;2027. Qui sotto un esempio di come appariranno (contenuti segnaposto).</div>
+    <div class="rows">
+      {% set esempi = [
+        {meta:"Pubblicazione", title:"Titolo dell'articolo o dello studio", sub:"Autori · Rivista o congresso · Anno"},
+        {meta:"Materiale", title:"Guida divulgativa sul benessere dei camelidi", sub:"PDF scaricabile"},
+        {meta:"Webinar", title:"Registrazione di un incontro formativo", sub:"Video · Durata"}
+      ] %}
+      {% for r in esempi %}
+      <a class="row" href="#">
+        <span class="meta">{{ r.meta }}</span>
+        <span class="title">{{ r.title }}<small>{{ r.sub }}</small></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<nav class="site-nav">
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="/assets/img/logo-128.png" width="42" height="42" alt="Logo Camelid Research Studies APS">
+    <span class="nav-brand-text">Camelid Research Studies<span>{{ site.legalForm }}</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    {% for item in site.nav %}
+    <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.getElementById('nav-links');
+  if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}
+})();
+</script>

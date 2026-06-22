@@ -1,0 +1,34 @@
+{
+  "name": "Camelid Research Studies",
+  "legalName": "Camelid Research Studies APS",
+  "legalForm": "Associazione di Promozione Sociale",
+  "tagline": "Ricerca, benessere animale e relazioni tra esseri umani e camelidi",
+  "domain": "camelidresearchstudies.com",
+  "url": "https://camelidresearchstudies.com",
+  "email": "info.camelidresearch@gmail.com",
+  "lang": "it",
+  "_comment_analytics": "Incolla qui il token di Cloudflare Web Analytics dopo il primo deploy. Se vuoto, lo script non viene caricato.",
+  "cloudflareAnalyticsToken": "",
+  "titolare": {
+    "denominazione": "Camelid Research Studies APS",
+    "codiceFiscale": "94346470480",
+    "indirizzo": "Via di Roveta 7, 50018 Scandicci (FI)",
+    "legaleRappresentante": "Camilla Esclapon de Villeneuve",
+    "registro": "Registro Unico Nazionale del Terzo Settore (RUNTS)"
+  },
+  "privacyUpdated": "22 giugno 2026",
+  "nav": [
+    { "label": "Chi siamo", "url": "/chi-siamo/" },
+    { "label": "Progetti", "url": "/progetti/" },
+    { "label": "IAA", "url": "/iaa/" },
+    { "label": "Board", "url": "/board/" },
+    { "label": "Partner", "url": "/partner/" },
+    { "label": "Risorse", "url": "/risorse/" },
+    { "label": "Parlano di noi", "url": "/parlano-di-noi/" },
+    { "label": "Contatti", "url": "/contatti/" }
+  ],
+  "social": [
+    { "label": "Instagram", "url": "#" },
+    { "label": "LinkedIn", "url": "#" }
+  ]
+}
