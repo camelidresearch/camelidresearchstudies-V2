@@ -18,7 +18,7 @@
       <div class="hero-dots"></div>
       <div class="inner">
         {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
-        <h1>{{ heading or title | safe }}</h1>
+        <h1>{{ (heading or title) | safe }}</h1>
         {% if lead %}<p class="lead">{{ lead | safe }}</p>{% endif %}
       </div>
     </header>
