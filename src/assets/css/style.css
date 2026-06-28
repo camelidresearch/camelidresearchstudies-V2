@@ -228,7 +228,7 @@ footer.site-footer{background:var(--text);padding:3rem 2.5rem 2rem}
 @media(max-width:1024px){
   .hero-inner{grid-template-columns:1fr;gap:2.5rem}
   .hero-right{order:-1}
-  .hero-logo-img{width:320px}
+  .hero-logo-img{width:400px}
 }
 @media(max-width:768px){
   nav.site-nav{padding:0 1.25rem}
@@ -245,7 +245,7 @@ footer.site-footer{background:var(--text);padding:3rem 2.5rem 2rem}
   .page-header{padding:calc(var(--nav-h) + 3rem) 1.25rem 2.5rem}
   .hero-inner{grid-template-columns:1fr;gap:2.5rem}
   .hero-right{order:-1}
-  .hero-logo-img{width:210px}
+  .hero-logo-img{width:290px}
   .split,.card-grid,.card-grid.cols-2,.people-grid{grid-template-columns:1fr;gap:2rem}
   .logo-grid{grid-template-columns:repeat(2,1fr)}
   .footer-inner{grid-template-columns:1fr}
