@@ -27,8 +27,5 @@
     { "label": "Parlano di noi", "url": "/parlano-di-noi/" },
     { "label": "Contatti", "url": "/contatti/" }
   ],
-  "social": [
-    { "label": "Instagram", "url": "#" },
-    { "label": "LinkedIn", "url": "#" }
-  ]
+  "social": []
 }
