@@ -51,12 +51,10 @@ I testi sono **separati dalla grafica**, così la cliente potrà modificarli sen
    - **Build output directory:** `_site`
    - **Environment variable:** `NODE_VERSION = 18` (o superiore)
 
-## Form di contatto (Cloudflare Pages Forms)
+## Form di contatto (Web3Forms)
 
 Il modulo in `/contatti/` usa l'attributo `data-static-form-name="contatti"`.
-Va abilitata la funzione **Forms** nel progetto Pages: le risposte si leggono dalla
-dashboard Cloudflare. Non serve alcun backend. È già presente un campo *honeypot*
-anti-spam nascosto.
+
 
 ## Statistiche (Cloudflare Web Analytics)
 
