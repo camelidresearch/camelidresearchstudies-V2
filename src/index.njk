@@ -38,9 +38,8 @@ permalink: /
         <h2>Un'associazione nata dalla <em>passione per i camelidi</em></h2>
       </div>
       <div class="prose">
-        <p>Camelid Research Studies APS nasce per unire ricerca scientifica, medicina veterinaria, benessere animale e studio della relazione tra esseri umani e camelidi, contribuendo alla crescita delle conoscenze e alla diffusione di buone pratiche nel settore.</p>
-        <p>La nostra missione è promuovere la conoscenza, la salute e il benessere dei camelidi sudamericani domestici attraverso la ricerca, la formazione, la divulgazione e la collaborazione tra professionisti, allevatori, ricercatori e istituzioni.</p>
-        <p><a class="btn-outline" href="/chi-siamo/">Scopri di più &rarr;</a></p>
+        <p>Una rete di professionisti per portare metodo scientifico ed evidenze nel mondo dei camelidi sudamericani domestici. Scopri come nasce l'associazione e i principi che la guidano.</p>
+        <p><a class="btn-outline" href="/chi-siamo/">Scopri chi siamo &rarr;</a></p>
       </div>
     </div>
   </div>
@@ -52,9 +51,10 @@ permalink: /
     <h2>Otto ambiti di <em>lavoro</em></h2>
     <div class="card-grid">
       {% for a in aree %}
-      <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3><p>{{ a.text }}</p></div>
+      <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3></div>
       {% endfor %}
     </div>
+    <div class="actions"><a href="/progetti/" class="btn-outline">Scopri le aree &rarr;</a></div>
   </div>
 </section>
 
@@ -64,7 +64,7 @@ permalink: /
     <h2>Primi progetti <em>2026&ndash;2027</em></h2>
     <div class="card-grid">
       {% for p in progetti %}
-      <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
+      <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3></div>
       {% endfor %}
     </div>
     <div class="actions"><a href="/progetti/" class="btn-outline">Tutti i progetti &rarr;</a></div>
@@ -74,7 +74,7 @@ permalink: /
 <section class="cta-band">
   <div class="container">
     <h2>Collabora con noi</h2>
-    <p>Siamo aperti alla collaborazione con veterinari, università, centri di ricerca, associazioni ed enti pubblici e privati che condividano i nostri obiettivi.</p>
+    <p>Cerchiamo collaborazioni su ricerca, raccolta dati e formazione con chi condivide i nostri obiettivi.</p>
     <a href="/contatti/" class="btn-outline">Scrivici &rarr;</a>
   </div>
 </section>
