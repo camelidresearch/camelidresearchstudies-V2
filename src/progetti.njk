@@ -7,17 +7,35 @@ lead: Le aree in cui operiamo e i primi progetti che stiamo sviluppando per la s
 ---
 <section class="bg-soft">
   <div class="container">
-    <div class="eyebrow">In sviluppo · 2026&ndash;2027</div>
-    <h2>I primi <em>progetti</em></h2>
-    <div class="card-grid">
-      {% for p in progetti %}
-      <div class="card on-soft"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
-      {% endfor %}
+    <div class="eyebrow">Il nostro programma di ricerca</div>
+    <h2>Una baseline emozionale per <em>alpaca e lama</em></h2>
+    <p class="lead" style="max-width:720px">Centro di Ricerca sul Benessere dei Camelidi Sudamericani (CRS)</p>
+    <div class="prose" style="max-width:720px;margin-top:2rem">
+      <p>L'aumento della diffusione degli alpaca e dei lama in Europa e in Italia, sia negli allevamenti sia nell'ambito delle attività assistite con gli animali, dell'agriturismo e dell'allevamento amatoriale, rende sempre più evidente la necessità di sviluppare strumenti oggettivi e standardizzati per la valutazione del loro stato di benessere.</p>
+      <p>Attualmente gran parte delle conoscenze sulla gestione comportamentale ed emozionale dei camelidi sudamericani deriva dall'esperienza pratica degli allevatori e dalla letteratura internazionale ancora limitata. Mancano infatti protocolli validati che consentano di interpretare in maniera oggettiva il loro stato emozionale durante l'interazione con l'uomo e nelle differenti condizioni gestionali.</p>
+      <p>Per tale motivo il CRS intende promuovere un progetto di ricerca finalizzato alla costruzione della prima baseline emozionale standardizzata per alpaca e lama, mediante l'integrazione di parametri comportamentali, fisiologici e bioacustici.</p>
+      <p>Lo studio si propone di identificare specifici indicatori correlati alle principali emozioni positive (rilassamento, curiosità, interesse, serenità e motivazione all'interazione) e negative (paura, stress, frustrazione, ansia e discomfort), definendone i relativi pattern fisiologici.</p>
+      <p>L'obiettivo è analizzare le risposte emozionali durante differenti setting sperimentali che prevedano l'interazione uomo&ndash;animale, utilizzando dispositivi non invasivi in grado di rilevare parametri fisiologici oggettivi &mdash; quali variabilità della frequenza cardiaca, temperatura superficiale, attività motoria e altri biomarcatori di stress &mdash; mediante cardiofrequenzimetri e accelerometri, integrati con l'analisi dei vocalizzi e delle espressioni facciali.</p>
+      <p>Il progetto prende ispirazione dalle più recenti ricerche sviluppate nel cavallo e nell'asino, nelle quali la valutazione multidimensionale dello stato emozionale rappresenta oggi uno degli strumenti più promettenti per migliorare il benessere animale.</p>
+      <p>La realizzazione di una baseline emozionale validata consentirà di sviluppare linee guida scientifiche per allevatori, veterinari, operatori e professionisti del settore, favorendo una gestione maggiormente rispettosa delle esigenze etologiche dei camelidi sudamericani e contribuendo alla diffusione di pratiche basate su evidenze scientifiche.</p>
+      <p>In prospettiva, il progetto potrà rappresentare un importante riferimento internazionale per la valutazione del benessere di alpaca e lama, promuovendo una medicina veterinaria sempre più orientata all'approccio One Welfare, nel quale il benessere animale, umano e ambientale sono strettamente interconnessi.</p>
     </div>
   </div>
 </section>
 
 <section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">In sviluppo · 2026&ndash;2027</div>
+    <h2>I primi <em>progetti</em></h2>
+    <div class="card-grid">
+      {% for p in progetti %}
+      <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
   <div class="container">
     <div class="eyebrow">Aree di attività</div>
     <h2>Otto ambiti di <em>lavoro</em></h2>
