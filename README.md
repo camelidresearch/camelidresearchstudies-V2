@@ -4,7 +4,7 @@ Sito statico multipagina costruito con **Eleventy (11ty)**, pensato per essere p
 
 ## Requisiti
 
-- Node.js 18 o superiore
+- Node.js 20 o superiore
 
 ## Sviluppo in locale
 
@@ -42,18 +42,23 @@ I testi sono **separati dalla grafica**, così la cliente potrà modificarli sen
 - **Testo di una pagina** → il blocco `---` in cima al file `src/<pagina>.njk`
 - **Immagini** → `src/assets/img/` (poi si referenzia il file nella pagina)
 
-## Deploy su Cloudflare Pages
+## Deploy su Cloudflare Workers
+
+Il sito è pubblicato come Worker con asset statici (Cloudflare ha unificato Pages dentro Workers).
 
 1. Push del repository su GitHub.
-2. Cloudflare → **Workers & Pages → Create → Pages → Connect to Git**, seleziona il repo.
+2. Cloudflare → **Workers & Pages → Create**, importa il repo dalla Git.
 3. Impostazioni di build:
    - **Build command:** `npm run build`
-   - **Build output directory:** `_site`
-   - **Environment variable:** `NODE_VERSION = 18` (o superiore)
+   - **Deploy command:** `npx wrangler deploy`
+   - **Path / root directory:** vuoto
+   - **Environment variable:** `NODE_VERSION = 20`
+4. La configurazione è in `wrangler.jsonc` alla radice: `assets.directory = "./_site"` e il campo `name` deve coincidere con il nome del progetto nella dashboard.
 
 ## Form di contatto (Web3Forms)
 
-Il modulo in `/contatti/` usa l'attributo `data-static-form-name="contatti"`.
+Il modulo in `/contatti/` invia i dati a Web3Forms (le Pages Forms non funzionano sui Worker).
+Nel form c'è un campo nascosto `access_key` con la chiave dell'associazione e un honeypot anti-spam. Le risposte arrivano via email all'indirizzo collegato alla chiave; non serve alcun backend.
 
 
 ## Statistiche (Cloudflare Web Analytics)
@@ -72,7 +77,7 @@ riferimento legale prima della pubblicazione.
 L'architettura è già pronta: i contenuti vivono in `_data/` e nei front matter.
 Per dare alla cliente un pannello di modifica senza toccare il codice basterà agganciare
 un CMS Git-based — consigliato **Sveltia CMS** (o **Decap CMS**), entrambi compatibili con
-Cloudflare Pages. Si aggiunge una cartella `admin/` con un file di configurazione che mappa
+un sito statico. Si aggiunge una cartella `admin/` con un file di configurazione che mappa
 i campi già esistenti; ogni salvataggio diventa un commit. Nessuna riscrittura del sito.
 
 ## Da completare (contenuti da fornire)
