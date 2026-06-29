@@ -252,3 +252,8 @@ footer.site-footer{background:var(--text);padding:3rem 2.5rem 2rem}
   .row{grid-template-columns:1fr;gap:.4rem;text-align:left}
   .hero-stats{gap:1.5rem}
 }
+
+/* ---------- Prosa a due colonne (programma di ricerca) ---------- */
+.prose-cols{column-count:2;column-gap:3.5rem}
+.prose-cols p{break-inside:avoid}
+@media(max-width:768px){.prose-cols{column-count:1}}
