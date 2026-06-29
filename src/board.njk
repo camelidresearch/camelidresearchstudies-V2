@@ -2,22 +2,22 @@
 layout: base.njk
 title: Board
 eyebrow: Le persone
-heading: Il <em>board</em>
-lead: Veterinari, ricercatori e professionisti che guidano l'associazione. (Nomi, ruoli e biografie sono segnaposto, in attesa dei contenuti definitivi.)
-description: "Il consiglio direttivo di Camelid Research Studies APS: i veterinari, i ricercatori e i professionisti che guidano l'associazione."
+heading: Il <em>consiglio direttivo</em>
+lead: I professionisti che guidano Camelid Research Studies APS.
+description: "Il consiglio direttivo di Camelid Research Studies APS: i professionisti che guidano l'associazione."
 ---
 <section class="bg-soft">
   <div class="container">
     <div class="people-grid">
-      {% set ruoli = ["Presidente","Vicepresidente","Segretario","Tesoriere","Consigliere","Consigliere"] %}
-      {% for r in ruoli %}
+      {% for p in board %}
       <div class="person">
-        <div class="avatar">N{{ loop.index }}</div>
-        <h3>Nome Cognome</h3>
-        <div class="role">{{ r }}</div>
-        <p>Breve biografia segnaposto: ambito di competenza, formazione ed esperienza nel settore dei camelidi.</p>
+        <div class="avatar">{% if p.photo %}<img src="{{ p.photo }}" alt="Ritratto di {{ p.name }}">{% else %}{{ p.initials }}{% endif %}</div>
+        <h3>{{ p.name }}</h3>
+        <div class="role">{{ p.role }}</div>
+        {% if p.bio %}<p>{{ p.bio }}</p>{% endif %}
       </div>
       {% endfor %}
     </div>
+    <p class="empty-note" style="margin-top:2.5rem">Il consiglio direttivo è in fase di completamento: le altre cariche verranno pubblicate non appena disponibili.</p>
   </div>
 </section>
