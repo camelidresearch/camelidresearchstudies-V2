@@ -50,7 +50,7 @@ description: "Il programma di ricerca per la prima baseline emozionale di alpaca
     <div class="eyebrow">In sviluppo · 2026&ndash;2027</div>
     <h2>I primi <em>progetti</em></h2>
     <div class="card-grid">
-      {% for p in progetti %}
+      {% for p in progetti.elenco %}
       <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
       {% endfor %}
     </div>

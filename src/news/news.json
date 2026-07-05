@@ -1,0 +1,9 @@
+{
+  "layout": "news-article.njk",
+  "tags": "news",
+  "hideHeader": true,
+  "permalink": "/risorse/news/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "description": "{{ sommario }}"
+  }
+}

@@ -1,16 +1,18 @@
-[
-  {
-    "name": "Dr.ssa Camilla Esclapon de Villeneuve",
-    "role": "Presidente",
-    "photo": "/assets/img/camilla-esclapon.jpg",
-    "initials": "CE",
-    "bio": ""
-  },
-  {
-    "name": "Dr.ssa Alessia Ciaramelli",
-    "role": "Vicepresidente",
-    "photo": "",
-    "initials": "AC",
-    "bio": ""
-  }
-]
+{
+  "membri": [
+    {
+      "name": "Dr.ssa Camilla Esclapon de Villeneuve",
+      "role": "Presidente",
+      "photo": "/assets/img/camilla-esclapon.jpg",
+      "initials": "CE",
+      "bio": ""
+    },
+    {
+      "name": "Dr.ssa Alessia Ciaramelli",
+      "role": "Vicepresidente",
+      "photo": "",
+      "initials": "AC",
+      "bio": ""
+    }
+  ]
+}

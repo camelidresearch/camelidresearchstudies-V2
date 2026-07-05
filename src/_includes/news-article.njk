@@ -1,0 +1,52 @@
+---
+layout: base.njk
+---
+{% set a = autori[autore or "redazione"] %}
+<header class="page-header">
+  <div class="hero-dots"></div>
+  <div class="inner">
+    <div class="eyebrow">News · {{ page.date | dataIt }}</div>
+    <h1>{{ title }}</h1>
+    {% if sommario %}<p class="lead">{{ sommario }}</p>{% endif %}
+    <div style="display:flex;align-items:center;gap:12px;margin-top:1.6rem">
+      <div style="width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--accent-pale);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;color:var(--accent);font-size:1rem">
+        {% if a.foto %}<img src="{{ a.foto }}" alt="Ritratto di {{ a.nome }}" sizes="44px" style="width:100%;height:100%;object-fit:cover">{% else %}{{ a.iniziali }}{% endif %}
+      </div>
+      <div>
+        <div style="font-size:14px;color:var(--text);font-weight:500">{{ a.nome }}</div>
+        {% if a.ruolo %}<div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-mid);font-weight:600">{{ a.ruolo }}</div>{% endif %}
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bg-soft">
+  <div class="container">
+    {% if immagine %}
+    <div class="visual" style="max-width:720px;margin:0 auto 2.5rem;aspect-ratio:3/2">
+      <img src="{{ immagine }}" alt="{{ immagine_alt }}">
+    </div>
+    {% endif %}
+    <div class="prose" style="max-width:720px;margin:0 auto">
+      {{ content | safe }}
+    </div>
+    <div class="actions" style="max-width:720px;margin:2.5rem auto 0">
+      <a class="btn-outline" href="/risorse/">&larr; Tutte le risorse</a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ title | dump | safe }},
+  {% if sommario %}"description": {{ sommario | dump | safe }},{% endif %}
+  "datePublished": "{{ page.date.toISOString() }}",
+  "inLanguage": "it",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+  {% if immagine %}"image": "{{ site.url }}{{ immagine }}",{% endif %}
+  "author": { "@type": "{{ a.schemaType }}", "name": {{ a.nome | dump | safe }} },
+  "publisher": { "@type": "Organization", "name": {{ site.legalName | dump | safe }}, "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/img/logo.png" } }
+}
+</script>

@@ -3,11 +3,34 @@ layout: base.njk
 title: Risorse e pubblicazioni
 eyebrow: Risorse e pubblicazioni
 heading: Conoscenza <em>condivisa</em>
-lead: Pubblicazioni, materiali divulgativi e approfondimenti sulla salute e sul benessere dei camelidi.
-description: "Pubblicazioni, materiali divulgativi e approfondimenti sulla salute e sul benessere dei camelidi a cura di Camelid Research Studies APS."
+lead: News, pubblicazioni e materiali divulgativi sulla salute e sul benessere dei camelidi.
+description: "News, pubblicazioni e materiali divulgativi sulla salute e sul benessere dei camelidi a cura di Camelid Research Studies APS."
 ---
 <section class="bg-soft">
   <div class="container">
+    <div class="eyebrow">News</div>
+    <h2>Ultime <em>notizie</em></h2>
+    {% set articoli = collections.news | reverse %}
+    {% if articoli | length %}
+    <div class="rows">
+      {% for a in articoli %}
+      <a class="row" href="{{ a.url }}">
+        <span class="meta">{{ a.date | dataIt }}</span>
+        <span class="title">{{ a.data.title }}{% if a.data.sommario %}<small>{{ a.data.sommario }}</small>{% endif %}</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-note">Non ci sono ancora news pubblicate. I primi aggiornamenti arriveranno con l'avvio dei progetti 2026&ndash;2027.</div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">Pubblicazioni e materiali</div>
+    <h2>Materiali <em>divulgativi</em></h2>
     <div class="empty-note">L'associazione è di recente costituzione: le prime pubblicazioni e i materiali divulgativi arriveranno con l'avvio dei progetti 2026&ndash;2027. Qui sotto un esempio di come appariranno (contenuti segnaposto).</div>
     <div class="rows">
       {% set esempi = [
@@ -23,5 +46,13 @@ description: "Pubblicazioni, materiali divulgativi e approfondimenti sulla salut
       </a>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">In arrivo</div>
+    <h2>Camelid Research <em>Library</em></h2>
+    <p class="lead">Una biblioteca scientifica di schede sui camelidi &mdash; sintesi di studi, protocolli e linee guida, consultabili e filtrabili. In fase di sviluppo.</p>
   </div>
 </section>
