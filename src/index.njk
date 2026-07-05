@@ -66,7 +66,7 @@ permalink: /
     <div class="eyebrow">Progetti</div>
     <h2>Primi progetti <em>2026&ndash;2027</em></h2>
     <div class="card-grid">
-      {% for p in progetti %}
+      {% for p in progetti.elenco %}
       <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3></div>
       {% endfor %}
     </div>

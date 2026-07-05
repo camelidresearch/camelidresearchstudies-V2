@@ -9,7 +9,7 @@ description: "Il consiglio direttivo di Camelid Research Studies APS: i professi
 <section class="bg-soft">
   <div class="container">
     <div class="people-grid">
-      {% for p in board %}
+      {% for p in board.membri %}
       <div class="person">
         <div class="avatar">{% if p.photo %}<img src="{{ p.photo }}" alt="Ritratto di {{ p.name }}">{% else %}{{ p.initials }}{% endif %}</div>
         <h3>{{ p.name }}</h3>

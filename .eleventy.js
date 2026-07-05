@@ -5,6 +5,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
 
+  //Sveltia News, Progetti e Board
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  eleventyConfig.ignores.add("src/admin/**");
+
   // Anno corrente, comodo per il footer
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
