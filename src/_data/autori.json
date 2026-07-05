@@ -1,0 +1,23 @@
+{
+  "camilla": {
+    "nome": "Dr.ssa Camilla Esclapon de Villeneuve",
+    "ruolo": "Presidente",
+    "foto": "/assets/img/camilla-esclapon.jpg",
+    "iniziali": "CE",
+    "schemaType": "Person"
+  },
+  "alessia": {
+    "nome": "Dr.ssa Alessia Ciaramelli",
+    "ruolo": "Vicepresidente",
+    "foto": "",
+    "iniziali": "AC",
+    "schemaType": "Person"
+  },
+  "redazione": {
+    "nome": "Camelid Research Studies APS",
+    "ruolo": "Redazione",
+    "foto": "/assets/img/logo-128.png",
+    "iniziali": "CRS",
+    "schemaType": "Organization"
+  }
+}

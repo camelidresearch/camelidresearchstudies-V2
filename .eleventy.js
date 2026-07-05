@@ -8,6 +8,13 @@ module.exports = function (eleventyConfig) {
   // Anno corrente, comodo per il footer
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  // Data in italiano: 1 giugno 2026
+  eleventyConfig.addFilter("dataIt", (d) => {
+    const data = new Date(d);
+    const mesi = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+    return `${data.getUTCDate()} ${mesi[data.getUTCMonth()]} ${data.getUTCFullYear()}`;
+  });
+
   // Ottimizzazione automatica di tutte le <img> in build
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     extensions: "html",
