@@ -2,7 +2,7 @@ backend:
   name: github
   repo: camelidresearch/camelidresearchstudies-V2
   branch: main
-  # base_url: verrà aggiunto in Fase 4b con l'URL del Worker di autenticazione
+  base_url: https://sveltia-cms-auth.info-camelidresearch.workers.dev
 
 media_folder: src/assets/img
 public_folder: /assets/img
