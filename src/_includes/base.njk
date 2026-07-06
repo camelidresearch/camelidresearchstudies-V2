@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ lang or 'it' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,10 @@
   <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dmserif-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
+  {% for l in page.url | locale_links %}
+  <link rel="alternate" hreflang="{{ l.lang }}" href="{{ site.url }}{{ l.url }}">
+  {% endfor %}
+  {% if (page.url | locale_links).length %}<link rel="alternate" hreflang="{{ lang or 'it' }}" href="{{ site.url }}{{ page.url }}">{% endif %}
 </head>
 <body>
   {% include "partials/nav.njk" %}

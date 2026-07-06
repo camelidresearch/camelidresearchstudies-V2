@@ -1,5 +1,12 @@
-[
-  "Benessere animale", "Integrità scientifica", "Approccio basato sulle evidenze",
-  "Formazione continua", "Condivisione delle conoscenze", "Collaborazione",
-  "Rispetto per animali, persone e ambiente", "Innovazione", "Inclusione", "Sostenibilità"
-]
+{
+  "it": [
+    "Benessere animale", "Integrità scientifica", "Approccio basato sulle evidenze",
+    "Formazione continua", "Condivisione delle conoscenze", "Collaborazione",
+    "Rispetto per animali, persone e ambiente", "Innovazione", "Inclusione", "Sostenibilità"
+  ],
+  "en": [
+    "Animal welfare", "Scientific integrity", "Evidence-based approach",
+    "Continuing education", "Knowledge sharing", "Collaboration",
+    "Respect for animals, people and the environment", "Innovation", "Inclusion", "Sustainability"
+  ]
+}

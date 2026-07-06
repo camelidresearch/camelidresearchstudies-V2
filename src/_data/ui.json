@@ -1,0 +1,36 @@
+{
+  "it": {
+    "nav": [
+      { "label": "Chi siamo", "url": "/chi-siamo/" },
+      { "label": "Progetti", "url": "/progetti/" },
+      { "label": "IAA", "url": "/iaa/" },
+      { "label": "Board", "url": "/board/" },
+      { "label": "Partner", "url": "/partner/" },
+      { "label": "Risorse", "url": "/risorse/" },
+      { "label": "Parlano di noi", "url": "/parlano-di-noi/" },
+      { "label": "Contatti", "url": "/contatti/" }
+    ],
+    "nav_toggle": "Apri il menu",
+    "footer_pages": "Pagine",
+    "footer_contact": "Contatti",
+    "privacy": "Privacy Policy",
+    "tagline": "Ricerca, benessere animale e relazioni tra esseri umani e camelidi"
+  },
+  "en": {
+    "nav": [
+      { "label": "About us", "url": "/chi-siamo/" },
+      { "label": "Projects", "url": "/progetti/" },
+      { "label": "AAI", "url": "/iaa/" },
+      { "label": "Board", "url": "/board/" },
+      { "label": "Partners", "url": "/partner/" },
+      { "label": "Resources", "url": "/risorse/" },
+      { "label": "Press", "url": "/parlano-di-noi/" },
+      { "label": "Contact", "url": "/contatti/" }
+    ],
+    "nav_toggle": "Open menu",
+    "footer_pages": "Pages",
+    "footer_contact": "Contact",
+    "privacy": "Privacy Policy",
+    "tagline": "Research, animal welfare and human–camelid relationships"
+  }
+}

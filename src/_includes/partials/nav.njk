@@ -1,15 +1,22 @@
 <nav class="site-nav">
-  <a class="nav-brand" href="/">
-    <img class="nav-logo" src="/assets/img/logo-128.png" loading="eager" width="42" height="42" alt="Logo Camelid Research Studies APS">
+  <a class="nav-brand" href="{{ '/' | locale_url }}">
+    <img class="nav-logo" src="/assets/img/logo-128.png" width="42" height="42" loading="eager" alt="Logo Camelid Research Studies APS">
     <span class="nav-brand-text">Camelid Research Studies<span>{{ site.legalForm }}</span></span>
   </a>
-  <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links">
+  <button class="nav-toggle" aria-label="{{ T.nav_toggle }}" aria-expanded="false" aria-controls="nav-links">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
   <ul class="nav-links" id="nav-links">
-    {% for item in site.nav %}
-    <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+    {% for item in T.nav %}
+    <li><a href="{{ item.url | locale_url }}"{% if page.url == (item.url | locale_url) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
     {% endfor %}
+    {% set altLinks = page.url | locale_links %}
+    {% if altLinks.length %}
+    <li class="lang-switch">
+      <span class="current">{{ page.lang | upper }}</span>
+      {% for l in altLinks %}<a href="{{ l.url }}" hreflang="{{ l.lang }}" lang="{{ l.lang }}">{{ l.lang | upper }}</a>{% endfor %}
+    </li>
+    {% endif %}
   </ul>
 </nav>
 <script>

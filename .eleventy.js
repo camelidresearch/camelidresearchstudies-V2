@@ -1,4 +1,5 @@
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const { I18nPlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
   // Copia gli asset statici (CSS, immagini) così come sono
@@ -18,6 +19,11 @@ module.exports = function (eleventyConfig) {
     const mesi = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
     return `${data.getUTCDate()} ${mesi[data.getUTCMonth()]} ${data.getUTCFullYear()}`;
   });
+
+  // i18n
+  eleventyConfig.addPlugin(I18nPlugin, { defaultLanguage: "it", errorMode: "allow-fallback" });
+
+  eleventyConfig.addFilter("dummy", () => { }); // se non ne hai bisogno, ignora
 
   // Ottimizzazione automatica di tutte le <img> in build
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
