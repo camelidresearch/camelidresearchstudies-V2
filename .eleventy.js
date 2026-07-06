@@ -23,6 +23,15 @@ module.exports = function (eleventyConfig) {
   // i18n
   eleventyConfig.addPlugin(I18nPlugin, { defaultLanguage: "it", errorMode: "allow-fallback" });
 
+  // Gemello linguistico di una pagina (slug identici IT/EN, IT alla radice):
+  // restituisce [{url, lang}] se la versione nell'altra lingua esiste, [] altrimenti.
+  eleventyConfig.addFilter("altLinks", (url, all) => {
+    const isEn = url.startsWith("/en/");
+    const twin = isEn ? url.slice(3) : "/en" + url;
+    const exists = (all || []).some((p) => p.url === twin);
+    return exists ? [{ url: twin, lang: isEn ? "it" : "en" }] : [];
+  });
+
   eleventyConfig.addFilter("dummy", () => { }); // se non ne hai bisogno, ignora
 
   // Ottimizzazione automatica di tutte le <img> in build

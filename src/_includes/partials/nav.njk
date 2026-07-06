@@ -10,7 +10,7 @@
     {% for item in T.nav %}
     <li><a href="{{ item.url | locale_url }}"{% if page.url == (item.url | locale_url) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
     {% endfor %}
-    {% set altLinks = page.url | locale_links %}
+    {% set altLinks = page.url | altLinks(collections.all) %}
     {% if altLinks.length %}
     <li class="lang-switch">
       <span class="current">{{ page.lang | upper }}</span>
