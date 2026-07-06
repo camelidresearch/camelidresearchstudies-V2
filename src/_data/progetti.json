@@ -1,7 +1,40 @@
 {
-  "elenco": [
-    { "title": "Stress e benessere negli alpaca e nei lama in attività assistite", "period": "2026 – 2027", "text": "Studio dei parametri comportamentali e fisiologici associati al benessere e allo stress durante attività svolte con persone anziane e persone con disabilità cognitive." },
-    { "title": "Banca dati sul benessere e sulla salute dei camelidi", "period": "2026 – 2027", "text": "Creazione di un archivio condiviso per raccogliere informazioni cliniche, comportamentali e gestionali utili alla ricerca e alla pratica veterinaria." },
-    { "title": "Rete di ricerca sui camelidi", "period": "2026 – 2027", "text": "Sviluppo di una rete di veterinari, ricercatori, allevatori e professionisti interessati alla salute, al benessere e alla gestione dei camelidi." }
-  ]
+  "it": {
+    "elenco": [
+      {
+        "title": "Stress e benessere negli alpaca e nei lama in attività assistite",
+        "period": "2026 – 2027",
+        "text": "Studio dei parametri comportamentali e fisiologici associati al benessere e allo stress durante attività svolte con persone anziane e persone con disabilità cognitive."
+      },
+      {
+        "title": "Banca dati sul benessere e sulla salute dei camelidi",
+        "period": "2026 – 2027",
+        "text": "Creazione di un archivio condiviso per raccogliere informazioni cliniche, comportamentali e gestionali utili alla ricerca e alla pratica veterinaria."
+      },
+      {
+        "title": "Rete di ricerca sui camelidi",
+        "period": "2026 – 2027",
+        "text": "Sviluppo di una rete di veterinari, ricercatori, allevatori e professionisti interessati alla salute, al benessere e alla gestione dei camelidi."
+      }
+    ]
+  },
+  "en": {
+    "elenco": [
+      {
+        "title": "Stress and welfare in alpacas and llamas in assisted activities",
+        "period": "2026 – 2027",
+        "text": "Study of the behavioural and physiological parameters associated with welfare and stress during activities carried out with elderly people and people with cognitive disabilities."
+      },
+      {
+        "title": "Camelid welfare and health database",
+        "period": "2026 – 2027",
+        "text": "Creation of a shared archive to collect clinical, behavioural and management information useful for research and veterinary practice."
+      },
+      {
+        "title": "Camelid research network",
+        "period": "2026 – 2027",
+        "text": "Development of a network of veterinarians, researchers, breeders and professionals interested in the health, welfare and management of camelids."
+      }
+    ]
+  }
 }

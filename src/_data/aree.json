@@ -1,10 +1,70 @@
-[
-  { "title": "Ricerca scientifica", "text": "Promuovere e sviluppare studi scientifici sui camelidi sudamericani domestici, favorendo collaborazioni tra veterinari, ricercatori, università e allevatori e diffondendo i risultati attraverso pubblicazioni e congressi." },
-  { "title": "Salute e benessere dei camelidi", "text": "Studiare gli indicatori di benessere e di stress negli alpaca e nei lama e promuovere pratiche di gestione rispettose delle esigenze etologiche della specie." },
-  { "title": "Interventi assistiti con gli animali", "text": "Studiare il ruolo di alpaca e lama negli interventi assistiti, valutandone l'impatto sul benessere degli animali coinvolti e sviluppando protocolli di tutela." },
-  { "title": "Formazione e divulgazione", "text": "Organizzare corsi, seminari, webinar e incontri formativi per l'aggiornamento di veterinari, allevatori e operatori, diffondendo informazioni basate sulle evidenze." },
-  { "title": "Collaborazione nazionale e internazionale", "text": "Creare una rete di professionisti interessati ai camelidi e partecipare a progetti di ricerca e formazione con partner nazionali e internazionali." },
-  { "title": "Medicina veterinaria e allevamenti", "text": "Migliorare le conoscenze sulle principali patologie dei camelidi e contribuire allo sviluppo di linee guida e protocolli clinici specifici per la specie." },
-  { "title": "Relazione tra esseri umani e camelidi", "text": "Studiare le interazioni tra persone e camelidi in diversi contesti, valutando i benefici educativi, sociali e relazionali delle attività con alpaca e lama." },
-  { "title": "Sensibilizzazione e comunità", "text": "Diffondere una corretta conoscenza dei camelidi presso il pubblico e supportare proprietari, allevatori e professionisti con attività informative e formative." }
-]
+{
+  "it": [
+    {
+      "title": "Ricerca scientifica",
+      "text": "Promuovere e sviluppare studi scientifici sui camelidi sudamericani domestici, favorendo collaborazioni tra veterinari, ricercatori, università e allevatori e diffondendo i risultati attraverso pubblicazioni e congressi."
+    },
+    {
+      "title": "Salute e benessere dei camelidi",
+      "text": "Studiare gli indicatori di benessere e di stress negli alpaca e nei lama e promuovere pratiche di gestione rispettose delle esigenze etologiche della specie."
+    },
+    {
+      "title": "Interventi assistiti con gli animali",
+      "text": "Studiare il ruolo di alpaca e lama negli interventi assistiti, valutandone l'impatto sul benessere degli animali coinvolti e sviluppando protocolli di tutela."
+    },
+    {
+      "title": "Formazione e divulgazione",
+      "text": "Organizzare corsi, seminari, webinar e incontri formativi per l'aggiornamento di veterinari, allevatori e operatori, diffondendo informazioni basate sulle evidenze."
+    },
+    {
+      "title": "Collaborazione nazionale e internazionale",
+      "text": "Creare una rete di professionisti interessati ai camelidi e partecipare a progetti di ricerca e formazione con partner nazionali e internazionali."
+    },
+    {
+      "title": "Medicina veterinaria e allevamenti",
+      "text": "Migliorare le conoscenze sulle principali patologie dei camelidi e contribuire allo sviluppo di linee guida e protocolli clinici specifici per la specie."
+    },
+    {
+      "title": "Relazione tra esseri umani e camelidi",
+      "text": "Studiare le interazioni tra persone e camelidi in diversi contesti, valutando i benefici educativi, sociali e relazionali delle attività con alpaca e lama."
+    },
+    {
+      "title": "Sensibilizzazione e comunità",
+      "text": "Diffondere una corretta conoscenza dei camelidi presso il pubblico e supportare proprietari, allevatori e professionisti con attività informative e formative."
+    }
+  ],
+  "en": [
+    {
+      "title": "Scientific research",
+      "text": "Promote and develop scientific studies on domestic South American camelids, fostering collaboration among veterinarians, researchers, universities and breeders and sharing results through publications and conferences."
+    },
+    {
+      "title": "Camelid health and welfare",
+      "text": "Study welfare and stress indicators in alpacas and llamas and promote management practices that respect the ethological needs of the species."
+    },
+    {
+      "title": "Animal-assisted interventions",
+      "text": "Study the role of alpacas and llamas in assisted interventions, assessing their impact on the welfare of the animals involved and developing protective protocols."
+    },
+    {
+      "title": "Training and outreach",
+      "text": "Organise courses, seminars, webinars and training sessions for veterinarians, breeders and operators, spreading evidence-based information."
+    },
+    {
+      "title": "National and international collaboration",
+      "text": "Build a network of professionals interested in camelids and take part in research and training projects with national and international partners."
+    },
+    {
+      "title": "Veterinary medicine and herd health",
+      "text": "Improve knowledge of the main camelid diseases and contribute to the development of species-specific clinical guidelines and protocols."
+    },
+    {
+      "title": "Human–camelid relationship",
+      "text": "Study the interactions between people and camelids in different contexts, assessing the educational, social and relational benefits of activities with alpacas and llamas."
+    },
+    {
+      "title": "Awareness and community",
+      "text": "Spread accurate knowledge of camelids among the public and support owners, breeders and professionals through informative and educational activities."
+    }
+  ]
+}
