@@ -5,16 +5,16 @@
         <img src="/assets/img/logo-128.png" width="40" height="40" alt="">
         <span class="name">Camelid Research Studies APS</span>
       </div>
-      <p>{{ site.tagline }}</p>
+      <p>{{ T.tagline }}</p>
     </div>
     <div class="footer-col">
-      <h4>Pagine</h4>
+      <h4>{{ T.footer_pages }}</h4>
       <ul>
-        {% for item in site.nav %}<li><a href="{{ item.url }}">{{ item.label }}</a></li>{% endfor %}
+        {% for item in T.nav %}<li><a href="{{ item.url | locale_url }}">{{ item.label }}</a></li>{% endfor %}
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Contatti</h4>
+      <h4>{{ T.footer_contact }}</h4>
       <ul>
         <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         {% for s in site.social %}<li><a href="{{ s.url }}">{{ s.label }}</a></li>{% endfor %}
@@ -23,6 +23,6 @@
   </div>
   <div class="footer-bottom">
     <span>&copy; {% year %} {{ site.legalName }} · C.F. {{ site.titolare.codiceFiscale }}</span>
-    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="{{ '/privacy-policy/' | locale_url }}">{{ T.privacy }}</a>
   </div>
 </footer>

@@ -1,0 +1,53 @@
+---
+layout: base.njk
+title: About us
+eyebrow: About us
+heading: Research and welfare in service of <em>camelids</em>
+lead: A non-profit association bringing together veterinarians, researchers, breeders and professionals around the health and welfare of alpacas and llamas.
+description: "Camelid Research Studies APS: a multidisciplinary group of veterinarians and researchers for the health and welfare of alpacas and llamas. Mission, vision and values."
+permalink: /en/chi-siamo/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="split">
+      <div class="prose">
+        <p>Camelid Research Studies APS was founded on the initiative of a multidisciplinary group of veterinarians, researchers and experts in the breeding and management of alpacas (Vicugna pacos) and llamas (Lama glama), with the aim of promoting a scientifically grounded approach to the welfare of these species.</p>
+        <p>It grew out of professional experience and a passion for alpacas and llamas, with the wish to create a space for collaboration dedicated to their health and welfare.</p>
+        <p>The association brings together scientific research, veterinary medicine, animal welfare and the study of the relationship between humans and camelids, contributing to the growth of knowledge and the spread of good practice in the field.</p>
+      </div>
+      <div class="sidebar-cards">
+        <div class="sidebar-card"><div class="label">Mission</div><p>To promote knowledge, health and welfare of domestic South American camelids through research, training, outreach and collaboration.</p></div>
+        <div class="sidebar-card"><div class="label">Vision</div><p>To become a point of reference for research, veterinary medicine and the study of human–camelid relationships, at national and international level.</p></div>
+        <div class="sidebar-card"><div class="label">Legal form</div><h3>APS · RUNTS</h3><p>Social Promotion Association registered with the Italian National Register of the Third Sector (RUNTS).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">Values</div>
+    <h2>The principles that <em>guide us</em></h2>
+    <div class="values">
+      {% for v in valori[lang] %}<span class="value-chip">{{ v }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="split center">
+      <div class="visual" style="aspect-ratio:3/4">
+        <img src="/assets/img/chi-siamo-alpaca.jpg" alt="A brown alpaca under an olive tree in the light of sunset">
+      </div>
+      <div>
+        <div class="eyebrow">Collaboration</div>
+        <h2>Open to those who <em>share our goals</em></h2>
+        <div class="prose">
+          <p>We are building a network with universities, institutions and professionals who share our goals of research and animal welfare.</p>
+          <p><a class="btn-primary" href="{{ '/partner/' | locale_url }}">Discover our partners &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

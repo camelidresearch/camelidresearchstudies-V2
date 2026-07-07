@@ -49,17 +49,21 @@ collections:
     editor: { preview: false }
     files:
       - name: progetti
-        label: "Progetti 2026–2027 (card)"
+        label: "Progetti 2026–2027 (card, italiano)"
         file: src/_data/progetti.json
         fields:
-          - name: elenco
-            label: Elenco progetti
-            widget: list
-            summary: "{{fields.title}}"
+          - name: it
+            label: Italiano
+            widget: object
             fields:
-              - { name: title, label: Titolo, widget: string }
-              - { name: period, label: Periodo, widget: string, default: "2026 – 2027" }
-              - { name: text, label: Descrizione, widget: text }
+              - name: elenco
+                label: Elenco progetti
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Titolo, widget: string }
+                  - { name: period, label: Periodo, widget: string, default: "2026 – 2027" }
+                  - { name: text, label: Descrizione, widget: text }
       - name: board
         label: Consiglio direttivo
         file: src/_data/board.json

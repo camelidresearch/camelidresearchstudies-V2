@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Partners
+eyebrow: Network and collaborations
+heading: Our <em>partners</em>
+lead: We are building a network with universities, research centres, associations and institutions that share our goals.
+description: "The network of Camelid Research Studies APS: universities, research centres, institutions and professionals collaborating for the health and welfare of camelids."
+permalink: /en/partner/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="prose" style="max-width:640px">
+      <p>The association is open to collaboration with veterinarians, universities, research centres, associations and public and private institutions that share the goals of promoting the health and welfare of camelids.</p>
+    </div>
+    <div class="logo-grid">
+      {% for i in [1,2,3,4,5,6,7,8] %}
+      <div class="logo-item"><span>Partner logo</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Become a partner</h2>
+    <p>Universities, institutions and professionals: let's explore together how to collaborate on research, data and training.</p>
+    <a href="{{ '/contatti/' | locale_url }}" class="btn-outline">Contact us &rarr;</a>
+  </div>
+</section>

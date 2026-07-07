@@ -1,0 +1,80 @@
+---
+layout: base.njk
+title: Projects
+eyebrow: Projects and activities
+heading: From research to <em>good practice</em>
+lead: The areas we work in and the first projects we are developing for the health and welfare of camelids.
+description: "The research programme for the first emotional baseline of alpacas and llamas, the 2026-2027 projects and the eight areas of activity of Camelid Research Studies APS."
+permalink: /en/progetti/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div style="text-align:center;max-width:720px;margin:0 auto">
+      <div class="eyebrow">Our research programme</div>
+      <h2>An emotional baseline for <em>alpacas and llamas</em></h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Research Centre for the Welfare of South American Camelids (CRS)</p>
+    </div>
+
+    <div class="prose prose-cols" style="max-width:920px;margin:2.5rem auto 0">
+      <p>The growing presence of alpacas and llamas in Europe and Italy &mdash; in breeding, animal-assisted activities, agritourism and hobby farming &mdash; makes the need for objective, standardised tools to assess their welfare increasingly clear.</p>
+      <p>At present, much of the knowledge on the behavioural and emotional management of South American camelids comes from breeders' practical experience and from still-limited international literature. Validated protocols to objectively interpret their emotional state during interaction with humans and across different management conditions are lacking.</p>
+      <p>For this reason the CRS intends to promote a research project aimed at building the first standardised emotional baseline for alpacas and llamas, through the integration of behavioural, physiological and bioacoustic parameters.</p>
+      <p>The study aims to identify specific indicators linked to the main positive emotions (relaxation, curiosity, interest, calm and motivation to interact) and negative ones (fear, stress, frustration, anxiety and discomfort), defining their physiological patterns.</p>
+      <p>The goal is to analyse emotional responses across different experimental settings involving human–animal interaction, using non-invasive devices able to measure objective physiological parameters &mdash; such as heart rate variability, surface temperature, motor activity and other stress biomarkers &mdash; via heart rate monitors and accelerometers, combined with the analysis of vocalisations and facial expressions.</p>
+      <p>The project draws inspiration from the most recent research developed in horses and donkeys, where the multidimensional assessment of emotional state is today one of the most promising tools for improving animal welfare.</p>
+      <p>A validated emotional baseline will make it possible to develop scientific guidelines for breeders, veterinarians, operators and professionals, fostering management that better respects the ethological needs of South American camelids and contributing to the spread of evidence-based practice.</p>
+      <p>In the longer term, the project may become an important international reference for assessing the welfare of alpacas and llamas, promoting a veterinary medicine increasingly oriented towards the One Welfare approach, in which animal, human and environmental welfare are closely interconnected.</p>
+    </div>
+
+    <div class="split center" style="margin-top:3.5rem">
+      <div>
+        <div class="eyebrow">What we measure</div>
+        <h2>The parameters <em>recorded</em></h2>
+        <div class="visual" style="aspect-ratio:4/3;margin-top:1.5rem">
+          <img src="/assets/img/progetti-lama.jpg" alt="A white llama looking towards the camera in an autumn woodland">
+        </div>
+      </div>
+      <div>
+        <ul class="feature-list">
+          <li><div><strong>Heart rate variability</strong> &mdash; measured with non-invasive heart rate monitors.</div></li>
+          <li><div><strong>Surface temperature and motor activity</strong> &mdash; via accelerometers and other stress biomarkers.</div></li>
+          <li><div><strong>Vocalisations</strong> &mdash; bioacoustic analysis of the calls.</div></li>
+          <li><div><strong>Facial expressions</strong> &mdash; observation of the behavioural patterns associated with emotions.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">In development · 2026&ndash;2027</div>
+    <h2>The first <em>projects</em></h2>
+    <div class="card-grid">
+      {% for p in progetti[lang].elenco %}
+      <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">Areas of activity</div>
+    <h2>Eight fields of <em>work</em></h2>
+    <p class="lead">The strategic goals around which we build research, training and outreach.</p>
+    <div class="card-grid">
+      {% for a in aree[lang] %}
+      <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3><p>{{ a.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Want to propose a project?</h2>
+    <p>We are looking for partners for research, data collection and training. Tell us about your idea or your setting.</p>
+    <a href="{{ '/contatti/' | locale_url }}" class="btn-outline">Get in touch &rarr;</a>
+  </div>
+</section>

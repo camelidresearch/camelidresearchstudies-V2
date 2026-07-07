@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Board
+eyebrow: The people
+heading: The <em>board of directors</em>
+lead: The professionals who lead Camelid Research Studies APS.
+description: "The board of directors of Camelid Research Studies APS: the professionals who lead the association."
+permalink: /en/board/
+---
+{% set roleEN = { "Presidente": "President", "Vicepresidente": "Vice President" } %}
+<section class="bg-soft">
+  <div class="container">
+    <div class="people-grid">
+      {% for p in board.membri %}
+      <div class="person">
+        <div class="avatar">{% if p.photo %}<img src="{{ p.photo }}" alt="Portrait of {{ p.name }}">{% else %}{{ p.initials }}{% endif %}</div>
+        <h3>{{ p.name }}</h3>
+        <div class="role">{{ roleEN[p.role] or p.role }}</div>
+        {% if p.bio %}<p>{{ p.bio }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <p class="empty-note" style="margin-top:2.5rem">The board of directors is being completed: the remaining positions will be published as soon as they are available.</p>
+  </div>
+</section>

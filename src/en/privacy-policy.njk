@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: Privacy Policy
+eyebrow: Privacy notice
+heading: Privacy &amp; Cookie Policy
+lead: "Information on the processing of personal data pursuant to Regulation (EU) 2016/679 (GDPR), relating to this website."
+description: "Information on the processing of personal data pursuant to the GDPR relating to the Camelid Research Studies APS website."
+permalink: /en/privacy-policy/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="prose" style="max-width:740px">
+
+      <p style="margin-bottom:1.5rem;padding:1rem 1.2rem;background:var(--accent-pale);border:1px solid var(--accent-border);border-radius:10px;font-size:14px">This English version is provided for information only. The <a href="{{ '/privacy-policy/' | locale_url }}">Italian version</a> is the legally binding text.</p>
+
+      <p style="margin-bottom:2rem">This notice concerns exclusively the processing of personal data carried out through this website. It does not cover other activities of the association, for which dedicated notices are provided.</p>
+
+      <h3>1. Data controller</h3>
+      <p>The data controller is <strong>{{ site.titolare.denominazione }}</strong> ({{ site.legalForm }}), registered with the {{ site.titolare.registro }}.<br>
+      Tax code: {{ site.titolare.codiceFiscale }}<br>
+      Registered office: {{ site.titolare.indirizzo }}<br>
+      Legal representative: {{ site.titolare.legaleRappresentante }}<br>
+      Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+      <h3>2. Data processed and purposes</h3>
+      <p><strong>a) Browsing data.</strong> The IT systems and software procedures used to operate the site acquire, during their normal operation, certain data whose transmission is implicit in the use of Internet communication protocols (for example IP address, browser and device type, date and time of the request). These data are used solely to deliver the site, ensure its security and prevent abuse. Legal basis: legitimate interest of the controller (Art. 6.1.f GDPR).</p>
+      <p><strong>b) Data provided voluntarily through the contact form.</strong> By filling in the form on the Contact page, we process first and last name, email address, any organisation and the content of the message. The purpose is solely to respond to the request sent. The form is managed through the Web3Forms service, which transmits the message to the controller's mailbox and temporarily stores a copy solely for delivery purposes (see point 3). Legal basis: response to a request from the data subject and consent given by sending the message (Art. 6.1.a/b GDPR). Provision is optional, but necessary to obtain a reply.</p>
+      <p><strong>c) Browsing statistics.</strong> The site uses Cloudflare Web Analytics, an aggregated, privacy-respecting statistics tool that <strong>does not use cookies</strong> and does not track users across different sites or create profiles. The data collected is anonymous and aggregated (for example number of page views, referrer, device type). Legal basis: legitimate interest of the controller (Art. 6.1.f GDPR).</p>
+
+      <h3>3. Data recipients and transfers</h3>
+      <p>Data is not disclosed or sold to third parties for commercial purposes. To deliver the site and for browsing statistics, the controller uses Cloudflare, Inc., acting as data processor (hosting and delivery of the site via the Cloudflare platform and the Cloudflare Web Analytics service). To manage the contact form, the controller uses Web3Forms, acting as data processor by receiving the data sent through the form and forwarding it to the controller's mailbox. Both providers are based in the United States and their use may involve the transfer of personal data to the United States: such transfer is governed by the safeguards provided under Chapter V of the GDPR, in particular the European Commission's Standard Contractual Clauses; for Cloudflare, the transfer is additionally covered by the provider's adherence to the EU-US Data Privacy Framework.</p>
+
+      <h3>4. Retention period</h3>
+      <p>Browsing data is kept for the time technically necessary for the security of the site. Messages sent through the contact form are kept by the controller for the time necessary to handle the request and, in any case, no longer than 24 months from the last contact, unless legal obligations apply. At the provider Web3Forms, form data is stored only temporarily for delivery purposes and deleted automatically according to its retention policies. Aggregated statistical data is kept in anonymous form.</p>
+
+      <h3>5. Cookies</h3>
+      <p>This site <strong>does not use profiling or marketing cookies</strong> and therefore does not require any consent banner. Only technical or security cookies set by the Cloudflare infrastructure may be present, to ensure the correct operation and protection of the site (for example against malicious automated traffic); such cookies are necessary and do not require consent. Fonts are hosted directly on this site, with no requests to external services.</p>
+
+      <h3>6. Rights of the data subject</h3>
+      <p>The data subject may at any time exercise the rights provided by Arts. 15-22 of the GDPR: access, rectification, erasure, restriction, objection to processing and data portability. Requests should be sent to <a href="mailto:{{ site.email }}">{{ site.email }}</a>. The data subject also has the right to lodge a complaint with the Italian Data Protection Authority (www.garanteprivacy.it).</p>
+
+      <h3>7. Changes</h3>
+      <p>The controller reserves the right to update this notice. Any changes will be published on this page.</p>
+
+      <p style="margin-top:2rem;font-size:13px;color:var(--light-muted)">Last updated: {{ site.privacyUpdated }}</p>
+
+    </div>
+  </div>
+</section>

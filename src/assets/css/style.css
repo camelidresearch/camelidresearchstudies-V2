@@ -257,3 +257,12 @@ footer.site-footer{background:var(--text);padding:3rem 2.5rem 2rem}
 .prose-cols{column-count:2;column-gap:3.5rem}
 .prose-cols p{break-inside:avoid}
 @media(max-width:768px){.prose-cols{column-count:1}}
+
+/* ---------- Switch lingua (nav) ---------- */
+.lang-switch{display:flex;align-items:center;gap:6px;font-size:12px;margin-left:.4rem;padding-left:1rem;border-left:1px solid var(--accent-border)}
+.lang-switch .current{color:var(--accent-deep);font-weight:600}
+.lang-switch a{color:var(--light-muted);text-decoration:none;transition:color .2s}
+.lang-switch a:hover{color:var(--accent-deep)}
+@media(max-width:768px){
+  .lang-switch{margin:.4rem 0 0;padding:.8rem 0 0;border-left:0;border-top:1px solid var(--accent-border);width:100%}
+}

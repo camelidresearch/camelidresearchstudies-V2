@@ -28,7 +28,7 @@ description: "Camelid Research Studies APS: un gruppo multidisciplinare di veter
     <div class="eyebrow">Valori</div>
     <h2>I principi che ci <em>guidano</em></h2>
     <div class="values">
-      {% for v in valori %}<span class="value-chip">{{ v }}</span>{% endfor %}
+      {% for v in valori[lang or 'it'] %}<span class="value-chip">{{ v }}</span>{% endfor %}
     </div>
   </div>
 </section>

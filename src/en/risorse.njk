@@ -1,0 +1,60 @@
+---
+layout: base.njk
+title: Resources and publications
+eyebrow: Resources and publications
+heading: Shared <em>knowledge</em>
+lead: News, publications and outreach materials on the health and welfare of camelids.
+description: "News, publications and outreach materials on the health and welfare of camelids by Camelid Research Studies APS."
+permalink: /en/risorse/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">News</div>
+    <h2>Latest <em>news</em></h2>
+    {% set articoli = collections.news | reverse %}
+    {% if articoli | length %}
+    <p class="empty-note" style="margin-bottom:1.5rem">Our news articles are currently published in Italian.</p>
+    <div class="rows">
+      {% for a in articoli %}
+      <a class="row" href="{{ a.url }}">
+        <span class="meta">{{ a.date | dataIt }}</span>
+        <span class="title">{{ a.data.title }}{% if a.data.sommario %}<small>{{ a.data.sommario }}</small>{% endif %}</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-note">No news has been published yet. The first updates will come with the launch of the 2026&ndash;2027 projects.</div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">Publications and materials</div>
+    <h2>Outreach <em>materials</em></h2>
+    <div class="empty-note">The association is newly established: the first publications and outreach materials will arrive with the launch of the 2026&ndash;2027 projects. Below is an example of how they will appear (placeholder content).</div>
+    <div class="rows">
+      {% set esempi = [
+        {meta:"Publication", title:"Title of the article or study", sub:"Authors · Journal or conference · Year"},
+        {meta:"Material", title:"Outreach guide on camelid welfare", sub:"Downloadable PDF"},
+        {meta:"Webinar", title:"Recording of a training session", sub:"Video · Duration"}
+      ] %}
+      {% for r in esempi %}
+      <a class="row" href="#">
+        <span class="meta">{{ r.meta }}</span>
+        <span class="title">{{ r.title }}<small>{{ r.sub }}</small></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">Coming soon</div>
+    <h2>Camelid Research <em>Library</em></h2>
+    <p class="lead">A scientific library of camelid research cards &mdash; summaries of studies, protocols and guidelines, searchable and filterable. In development.</p>
+  </div>
+</section>

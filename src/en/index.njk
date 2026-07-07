@@ -1,0 +1,83 @@
+---
+layout: base.njk
+title: ""
+hideHeader: true
+description: "Camelid Research Studies APS — a non-profit association for research, animal welfare and the study of the relationship between humans and camelids."
+permalink: /en/
+---
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="eyebrow">Non-profit association · Italy</div>
+      <h1>Science, welfare<br>and <em>camelids</em></h1>
+      <p class="lead">{{ T.tagline }}. We promote scientific research on the health and welfare of alpacas and llamas, training and collaboration among professionals, breeders and institutions.</p>
+      <div class="actions">
+        <a href="{{ '/progetti/' | locale_url }}" class="btn-primary">Our activities &rarr;</a>
+        <a href="{{ '/contatti/' | locale_url }}" class="btn-outline">Work with us</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Areas of activity</div></div>
+        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Projects 2026&ndash;2027</div></div>
+        <div><div class="hero-stat-num">APS</div><div class="hero-stat-label">Registered with RUNTS</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-logo-img" src="/assets/img/logo.png" loading="eager" alt="Camelid Research Studies APS logo">
+      <div class="hero-title-main">Camelid Research Studies</div>
+      <div class="hero-title-sub">{{ site.legalForm }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="split center">
+      <div class="visual" style="aspect-ratio:3/4">
+        <img src="/assets/img/home-bambina-alpaca.jpg" alt="A little girl gently embracing an alpaca among olive trees">
+      </div>
+      <div>
+        <div class="eyebrow">About us</div>
+        <h2>An association born from a <em>passion for camelids</em></h2>
+        <div class="prose">
+          <p>A network of professionals bringing scientific method and evidence to the world of domestic South American camelids. Discover how the association came to be and the principles that guide it.</p>
+          <p><a class="btn-outline" href="{{ '/chi-siamo/' | locale_url }}">About us &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="eyebrow">Areas of activity</div>
+    <h2>Eight fields of <em>work</em></h2>
+    <div class="card-grid">
+      {% for a in aree[lang] %}
+      <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3></div>
+      {% endfor %}
+    </div>
+    <div class="actions"><a href="{{ '/progetti/' | locale_url }}" class="btn-outline">Explore the areas &rarr;</a></div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="container">
+    <div class="eyebrow">Projects</div>
+    <h2>First projects <em>2026&ndash;2027</em></h2>
+    <div class="card-grid">
+      {% for p in progetti[lang].elenco %}
+      <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3></div>
+      {% endfor %}
+    </div>
+    <div class="actions"><a href="{{ '/progetti/' | locale_url }}" class="btn-outline">All projects &rarr;</a></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Work with us</h2>
+    <p>We are looking for collaborations on research, data collection and training with those who share our goals.</p>
+    <a href="{{ '/contatti/' | locale_url }}" class="btn-outline">Get in touch &rarr;</a>
+  </div>
+</section>

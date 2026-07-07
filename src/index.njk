@@ -53,7 +53,7 @@ permalink: /
     <div class="eyebrow">Aree di attività</div>
     <h2>Otto ambiti di <em>lavoro</em></h2>
     <div class="card-grid">
-      {% for a in aree %}
+      {% for a in aree[lang or 'it'] %}
       <div class="card on-soft"><span class="label">{{ "0" + (loop.index | string) }}</span><h3>{{ a.title }}</h3></div>
       {% endfor %}
     </div>
@@ -66,7 +66,7 @@ permalink: /
     <div class="eyebrow">Progetti</div>
     <h2>Primi progetti <em>2026&ndash;2027</em></h2>
     <div class="card-grid">
-      {% for p in progetti.elenco %}
+      {% for p in progetti[lang or 'it'].elenco %}
       <div class="card"><span class="label">{{ p.period }}</span><h3>{{ p.title }}</h3></div>
       {% endfor %}
     </div>
