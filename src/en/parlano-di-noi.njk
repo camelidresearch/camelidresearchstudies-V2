@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Press
+eyebrow: Press
+heading: Press <em>coverage</em>
+lead: Articles, interviews and mentions of the association in the press and sector media.
+description: "Articles, interviews and mentions of Camelid Research Studies APS in the press and sector media."
+permalink: /en/parlano-di-noi/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="rows">
+      {% set esempi = [
+        {meta:"Outlet", title:"Title of the article about the association", sub:"Outlet name · Date"},
+        {meta:"Interview", title:"Interview with a board member", sub:"Podcast or magazine · Date"}
+      ] %}
+      {% for r in esempi %}
+      <a class="row" href="#">
+        <span class="meta">{{ r.meta }}</span>
+        <span class="title">{{ r.title }}<small>{{ r.sub }}</small></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

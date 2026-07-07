@@ -1,0 +1,80 @@
+---
+layout: base.njk
+title: Contact
+eyebrow: Contact
+heading: Work <em>with us</em>
+lead: We are open to collaborations with universities, third-sector organisations, breeders and professionals. Write to us for research, partnerships or information.
+description: "Contact Camelid Research Studies APS for research collaborations, partnerships or information about alpacas, llamas and camelid welfare."
+permalink: /en/contatti/
+---
+<section class="bg-soft">
+  <div class="container">
+    <div class="split">
+      <div class="contact-info">
+        <p>Tell us about your request or proposal: we will get back to you as soon as possible.</p>
+        <div class="contact-detail"><div class="label">Email</div><div class="value"><a href="mailto:{{ site.email }}">{{ site.email }}</a></div></div>
+        <div class="contact-detail"><div class="label">Location</div><div class="value">Italy</div></div>
+        <div class="contact-detail"><div class="label">Legal form</div><div class="value">{{ site.legalForm }} · registered with RUNTS</div></div>
+      </div>
+      <div>
+        <form id="contact-form" class="contact-form">
+          <input type="hidden" name="access_key" value="d44d6fc6-3352-4171-9dfd-8dd1f07c48e6">
+          <input type="hidden" name="subject" value="New message from the Camelid Research Studies website">
+          <input type="hidden" name="from_name" value="Camelid Research Studies website">
+
+          <label for="nome">Full name</label>
+          <input id="nome" type="text" name="nome" placeholder="John Smith" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="name@example.com" required>
+
+          <label for="organizzazione">Organisation (optional)</label>
+          <input id="organizzazione" type="text" name="organizzazione" placeholder="University, association, farm…">
+
+          <label for="messaggio">Message</label>
+          <textarea id="messaggio" name="messaggio" placeholder="Briefly describe your request or proposal" required></textarea>
+
+          <!-- Web3Forms anti-spam honeypot: hidden, only bots fill it -->
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send message</button>
+          <p id="form-result" role="status" aria-live="polite" style="display:none;margin-top:1rem;font-size:14px"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var result = document.getElementById('form-result');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    result.style.display = 'none';
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.reset();
+          result.style.color = 'var(--accent-deep)';
+          result.textContent = 'Thank you, your message has been sent. We will reply as soon as possible.';
+        } else {
+          result.style.color = '#b00020';
+          result.textContent = 'Something went wrong. Please try again or email us.';
+        }
+        result.style.display = 'block';
+      })
+      .catch(function () {
+        result.style.color = '#b00020';
+        result.textContent = 'Network error. Please try again or email us.';
+        result.style.display = 'block';
+      })
+      .finally(function () { btn.disabled = false; btn.textContent = original; });
+  });
+})();
+</script>
