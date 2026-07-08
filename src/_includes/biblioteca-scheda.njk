@@ -1,0 +1,182 @@
+---
+layout: base.njk
+---
+{# ── Header di stampa (visibile solo in @media print) ──── #}
+<div class="bib-print-header">
+  <img src="/assets/img/logo.png" alt="" class="bib-print-logo">
+  <div>
+    <div class="bib-print-brand">Camelid Research Studies APS</div>
+    <div class="bib-print-lib">Camelid Research Library · {{ code }}</div>
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="hero-dots"></div>
+  <div class="inner">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;flex-wrap:wrap">
+      <div class="eyebrow">Camelid Research Library</div>
+      <span class="bib-code">{{ code }}</span>
+    </div>
+    <h1>{{ title }}</h1>
+    {% if authors %}<p class="lead" style="max-width:none;font-style:italic">{{ authors }}</p>{% endif %}
+
+    <div class="bib-meta">
+      {% if journal %}<div class="bib-meta-item"><span class="bib-meta-label">Rivista</span><span class="bib-meta-value">{{ journal }}{% if volume %} · Vol.&nbsp;{{ volume }}{% endif %}{% if pages %} · pp.&nbsp;{{ pages }}{% endif %}</span></div>{% endif %}
+      {% if year %}<div class="bib-meta-item"><span class="bib-meta-label">Anno</span><span class="bib-meta-value">{{ year }}</span></div>{% endif %}
+      {% if doi %}<div class="bib-meta-item"><span class="bib-meta-label">DOI</span><span class="bib-meta-value"><a href="https://doi.org/{{ doi }}" target="_blank" rel="noopener">{{ doi }}</a></span></div>{% endif %}
+      {% if species %}<div class="bib-meta-item"><span class="bib-meta-label">Specie</span><span class="bib-meta-value">{{ species }}</span></div>{% endif %}
+      {% if area %}<div class="bib-meta-item"><span class="bib-meta-label">Area</span><span class="bib-meta-value">{{ area }}</span></div>{% endif %}
+      {% if evidence_level %}<div class="bib-meta-item"><span class="bib-meta-label">Evidenza</span><span class="bib-meta-value">{{ evidence_level }}</span></div>{% endif %}
+    </div>
+  </div>
+</header>
+
+{# ── At a Glance ────────────────────────────────── #}
+{% if at_glance.length %}
+<section class="bg-soft">
+  <div class="container">
+    <div class="bib-glance">
+      <div class="bib-evidence">
+        <div class="bib-evidence-inner">
+          <div class="bib-evidence-badge level-{{ evidence_score or 1 }}">{{ evidence_score or "1" }}</div>
+          <div class="bib-evidence-type">{{ evidence_level }}</div>
+          <div class="bib-evidence-label">Livello di evidenza</div>
+        </div>
+      </div>
+      <div class="bib-glance-points">
+        <h3>Colpo d'occhio</h3>
+        <ul>
+          {% for point in at_glance %}<li>{{ point }}</li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Obiettivo · Contesto · Metodi ──────────────── #}
+{% if objective or background or methods %}
+<section class="bg-white">
+  <div class="container">
+    <div class="card-grid">
+      {% if objective %}
+      <div class="bib-section-card">
+        <h3>Objective</h3>
+        <p>{{ objective }}</p>
+      </div>
+      {% endif %}
+      {% if background %}
+      <div class="bib-section-card">
+        <h3>Background</h3>
+        <p>{{ background }}</p>
+      </div>
+      {% endif %}
+      {% if methods %}
+      <div class="bib-section-card">
+        <h3>Methods</h3>
+        <p>{{ methods }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Protocollo ─────────────────────────────────── #}
+{% if protocol %}
+<section class="bg-soft">
+  <div class="container">
+    <div class="bib-protocol">
+      <h3>Protocol</h3>
+      <div class="bib-protocol-grid">
+        {% if protocol.patient %}<div class="bib-protocol-col"><h4>Patient</h4><p>{{ protocol.patient }}</p></div>{% endif %}
+        {% if protocol.anaesthetic %}<div class="bib-protocol-col"><h4>Anaesthetic Protocol</h4><p>{{ protocol.anaesthetic }}</p></div>{% endif %}
+        {% if protocol.surgical %}<div class="bib-protocol-col"><h4>Surgical Procedure</h4><p>{{ protocol.surgical }}</p></div>{% endif %}
+        {% if protocol.nerve_block %}<div class="bib-protocol-col"><h4>Nerve Block</h4><p>{{ protocol.nerve_block }}</p></div>{% endif %}
+        {% if protocol.monitoring %}<div class="bib-protocol-col"><h4>Monitoring</h4><p>{{ protocol.monitoring }}</p></div>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Risultati · Implicazioni · Limiti ──────────── #}
+{% if findings.length or clinical_implications.length or limitations.length %}
+<section class="bg-white">
+  <div class="container">
+    <div class="card-grid">
+      {% if findings.length %}
+      <div class="bib-section-card bib-card-green">
+        <h3>Key Findings</h3>
+        <ul>{% for f in findings %}<li>{{ f }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      {% if clinical_implications.length %}
+      <div class="bib-section-card bib-card-blue">
+        <h3>Clinical Implications</h3>
+        <ul>{% for c in clinical_implications %}<li>{{ c }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      {% if limitations.length %}
+      <div class="bib-section-card bib-card-amber">
+        <h3>Limitations</h3>
+        <ul>{% for l in limitations %}<li>{{ l }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Messaggi chiave · Commentary · Citazione ───── #}
+<section class="bg-soft">
+  <div class="container">
+    <div class="card-grid">
+      {# Take-home messages #}
+      {% if take_home.length %}
+      <div class="bib-section-card bib-card-teal">
+        <h3>Key Take-Home Messages</h3>
+        <ul>{% for t in take_home %}<li>{{ t }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+
+      {# Commentary (corpo Markdown del file) #}
+      {% if content | trim %}
+      <div class="bib-commentary">
+        <h3>Commentary</h3>
+        <div class="prose">{{ content | safe }}</div>
+      </div>
+      {% endif %}
+
+      {# Citazione + QR code #}
+      <div>
+        {% if citation %}
+        <div class="bib-citation" style="margin-bottom:10px">
+          <h3>Citation</h3>
+          <p>{{ citation }}</p>
+        </div>
+        {% endif %}
+        <div class="bib-qr">
+          <div class="bib-qr-svg">
+            {% qrcode site.url + page.url %}
+          </div>
+          <div class="bib-qr-label">Link alla scheda</div>
+          <div class="bib-qr-url"><a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bib-footer">
+      <p>Camelid Research Library &middot; Evidence-based summaries for veterinarians, researchers and camelid professionals</p>
+    </div>
+
+    {# Azioni: PDF + torna alle risorse #}
+    <div class="actions bib-no-print" style="margin-top:1.5rem">
+      <button class="btn-primary" onclick="window.print()" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Scarica PDF
+      </button>
+      <a class="btn-outline" href="/risorse/">&larr; Tutte le risorse</a>
+    </div>
+  </div>
+</section>

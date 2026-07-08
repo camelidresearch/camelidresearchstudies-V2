@@ -1,5 +1,6 @@
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const { I18nPlugin } = require("@11ty/eleventy");
+const QRCode = require("qrcode");
 
 module.exports = function (eleventyConfig) {
   // Copia gli asset statici (CSS, immagini) così come sono
@@ -33,6 +34,20 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("dummy", () => { }); // se non ne hai bisogno, ignora
+
+  // QR code SVG generato in build (Biblioteca scientifica)
+  eleventyConfig.addAsyncShortcode("qrcode", async function (url) {
+    try {
+      return await QRCode.toString(url, {
+        type: "svg",
+        width: 140,
+        margin: 1,
+        color: { dark: "#1A1826", light: "#ffffff" }
+      });
+    } catch (e) {
+      return '<div style="width:140px;height:140px;border:2px dashed #ccc;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#999">QR</div>';
+    }
+  });
 
   // Ottimizzazione automatica di tutte le <img> in build
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
