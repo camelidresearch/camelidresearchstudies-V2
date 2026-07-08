@@ -44,6 +44,99 @@ collections:
         hint: "OBBLIGATORIA se carichi una foto: descrivi cosa si vede, es. 'Un alpaca bianco al pascolo tra gli ulivi'. Senza descrizione il sito non si pubblica."
       - { name: body, label: "Testo dell'articolo", widget: markdown }
 
+  - name: biblioteca
+    label: Biblioteca scientifica
+    label_singular: Scheda
+    folder: src/biblioteca
+    create: true
+    delete: true
+    extension: md
+    slug: "{{fields.code}}"
+    summary: "{{fields.code}} — {{fields.title}}"
+    fields:
+      - { name: code, label: Codice scheda, widget: string, hint: "Es. CRL-A-001" }
+      - { name: title, label: Titolo dell'articolo, widget: string }
+      - { name: authors, label: Autori, widget: string }
+      - { name: journal, label: Rivista, widget: string }
+      - { name: year, label: Anno, widget: number, value_type: int }
+      - { name: volume, label: Volume, widget: string, required: false }
+      - { name: pages, label: Pagine, widget: string, required: false }
+      - { name: doi, label: DOI, widget: string }
+      - name: species
+        label: Specie
+        widget: select
+        options:
+          - "Alpaca (Vicugna pacos)"
+          - "Llama (Lama glama)"
+          - "Alpaca & Llama"
+          - "South American camelids (general)"
+      - name: area
+        label: Area tematica
+        widget: select
+        options:
+          - "Anaesthesia & Analgesia"
+          - "Surgery"
+          - "Internal Medicine"
+          - "Reproduction"
+          - "Welfare & Behaviour"
+          - "Nutrition"
+          - "Infectious Diseases"
+          - "Dermatology"
+          - "Neonatology"
+          - "Animal-Assisted Interventions"
+          - "Other"
+      - name: evidence_level
+        label: Livello di evidenza
+        widget: select
+        options:
+          - { label: "Case Report", value: "Case Report" }
+          - { label: "Case Series", value: "Case Series" }
+          - { label: "Cohort / Cross-sectional", value: "Cohort Study" }
+          - { label: "Randomised Controlled Trial", value: "RCT" }
+          - { label: "Systematic Review / Meta-analysis", value: "Systematic Review" }
+      - name: evidence_score
+        label: Punteggio evidenza (1–5)
+        widget: number
+        value_type: int
+        min: 1
+        max: 5
+        default: 1
+        hint: "1 = Case Report, 2 = Case Series, 3 = Cohort, 4 = RCT, 5 = Systematic Review"
+      - name: at_glance
+        label: Colpo d'occhio (punti chiave)
+        widget: list
+        field: { name: point, label: Punto, widget: string }
+      - { name: objective, label: Objective, widget: text }
+      - { name: background, label: Background, widget: text }
+      - { name: methods, label: Methods, widget: text }
+      - name: protocol
+        label: Protocol
+        widget: object
+        fields:
+          - { name: patient, label: Patient, widget: text, required: false }
+          - { name: anaesthetic, label: Anaesthetic Protocol, widget: text, required: false }
+          - { name: surgical, label: Surgical Procedure, widget: text, required: false }
+          - { name: nerve_block, label: Specific Technique, widget: text, required: false }
+          - { name: monitoring, label: Monitoring, widget: text, required: false }
+      - name: findings
+        label: Key Findings
+        widget: list
+        field: { name: finding, label: Finding, widget: string }
+      - name: clinical_implications
+        label: Clinical Implications
+        widget: list
+        field: { name: implication, label: Implication, widget: string }
+      - name: limitations
+        label: Limitations
+        widget: list
+        field: { name: limitation, label: Limitation, widget: string }
+      - name: take_home
+        label: Key Take-Home Messages
+        widget: list
+        field: { name: message, label: Message, widget: string }
+      - { name: citation, label: Citazione completa, widget: text }
+      - { name: body, label: "Commentary (testo libero dell'associazione)", widget: markdown }
+
   - name: contenuti
     label: Contenuti del sito
     editor: { preview: false }

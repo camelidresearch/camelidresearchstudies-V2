@@ -29,30 +29,34 @@ description: "News, pubblicazioni e materiali divulgativi sulla salute e sul ben
 
 <section class="bg-white">
   <div class="container">
-    <div class="eyebrow">Pubblicazioni e materiali</div>
-    <h2>Materiali <em>divulgativi</em></h2>
-    <div class="empty-note">L'associazione è di recente costituzione: le prime pubblicazioni e i materiali divulgativi arriveranno con l'avvio dei progetti 2026&ndash;2027. Qui sotto un esempio di come appariranno (contenuti segnaposto).</div>
-    <div class="rows">
-      {% set esempi = [
-        {meta:"Pubblicazione", title:"Titolo dell'articolo o dello studio", sub:"Autori · Rivista o congresso · Anno"},
-        {meta:"Materiale", title:"Guida divulgativa sul benessere dei camelidi", sub:"PDF scaricabile"},
-        {meta:"Webinar", title:"Registrazione di un incontro formativo", sub:"Video · Durata"}
-      ] %}
-      {% for r in esempi %}
-      <a class="row" href="#">
-        <span class="meta">{{ r.meta }}</span>
-        <span class="title">{{ r.title }}<small>{{ r.sub }}</small></span>
-        <span class="arrow">&rarr;</span>
+    <div class="eyebrow">Camelid Research Library</div>
+    <h2>Biblioteca <em>scientifica</em></h2>
+    <p class="lead">Schede di sintesi di studi scientifici sui camelidi &mdash; revisionate e commentate dall'associazione. Ogni scheda riassume obiettivi, metodi, risultati e implicazioni cliniche di un singolo articolo pubblicato.</p>
+    {% set schede = collections.biblioteca | reverse %}
+    {% if schede | length %}
+    <div class="bib-index">
+      {% for s in schede %}
+      <a class="bib-index-card" href="{{ s.url }}">
+        <span class="bib-index-code">{{ s.data.code }}</span>
+        <div class="bib-index-body">
+          <h3>{{ s.data.title }}</h3>
+          <div class="bib-index-meta">{{ s.data.authors }} &middot; {{ s.data.journal }}, {{ s.data.year }}</div>
+          {% if s.data.area %}<span class="bib-index-area">{{ s.data.area }}</span>{% endif %}
+        </div>
+        <span class="bib-index-arrow">&rarr;</span>
       </a>
       {% endfor %}
     </div>
+    {% else %}
+    <div class="empty-note">Le prime schede della Camelid Research Library sono in preparazione. Ogni scheda è curata dal team scientifico dell'associazione e sarà pubblicata qui non appena completata.</div>
+    {% endif %}
   </div>
 </section>
 
 <section class="bg-soft">
   <div class="container">
-    <div class="eyebrow">In arrivo</div>
-    <h2>Camelid Research <em>Library</em></h2>
-    <p class="lead">Una biblioteca scientifica di schede sui camelidi &mdash; sintesi di studi, protocolli e linee guida, consultabili e filtrabili. In fase di sviluppo.</p>
+    <div class="eyebrow">Pubblicazioni e materiali</div>
+    <h2>Materiali <em>divulgativi</em></h2>
+    <div class="empty-note">L'associazione è di recente costituzione: le prime pubblicazioni e i materiali divulgativi arriveranno con l'avvio dei progetti 2026&ndash;2027.</div>
   </div>
 </section>
