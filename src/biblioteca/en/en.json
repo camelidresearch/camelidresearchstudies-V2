@@ -1,0 +1,6 @@
+{
+  "layout": "biblioteca-scheda.njk",
+  "lang": "en",
+  "hideHeader": true,
+  "permalink": "/en/risorse/biblioteca/{{ page.fileSlug }}/"
+}

@@ -1,6 +1,5 @@
 {
   "layout": "biblioteca-scheda.njk",
-  "tags": "biblioteca",
   "hideHeader": true,
   "permalink": "/risorse/biblioteca/{{ page.fileSlug }}/",
   "eleventyComputed": {

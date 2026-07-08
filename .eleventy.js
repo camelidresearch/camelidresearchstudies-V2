@@ -35,6 +35,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("dummy", () => { }); // se non ne hai bisogno, ignora
 
+  // Collection via glob: separa IT (radice) da EN (sottocartella en/) senza conflitti di tags
+  eleventyConfig.addCollection("news", c => c.getFilteredByGlob("./src/news/it/*.md"));
+  eleventyConfig.addCollection("news_en", c => c.getFilteredByGlob("./src/news/en/*.md"));
+  eleventyConfig.addCollection("biblioteca", c => c.getFilteredByGlob("./src/biblioteca/it/*.md"));
+  eleventyConfig.addCollection("biblioteca_en", c => c.getFilteredByGlob("./src/biblioteca/en/*.md"));
+
   // QR code SVG generato in build (Biblioteca scientifica)
   eleventyConfig.addAsyncShortcode("qrcode", async function (url) {
     try {
