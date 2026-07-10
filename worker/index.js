@@ -31,10 +31,10 @@ export default {
     const match = cookie.match(/(?:^|;\s*)lang=(it|en)/);
     if (match) {
       if (match[1] === "en") {
-        return Response.redirect(url.origin + "/en/", 302);
+        return noCacheRedirect(url.origin + "/en/");
       }
-      // lang=it -> home italiana, prosegui sotto
-      return env.ASSETS.fetch(request);
+      // lang=it -> home italiana (no-cache, così i reload rileggono il cookie)
+      return serveItalianHome(request, env);
     }
 
     // 2. Nessun cookie: leggi la lingua preferita del browser
@@ -42,13 +42,42 @@ export default {
     const prefersEnglish = detectEnglish(accept);
 
     if (prefersEnglish) {
-      return Response.redirect(url.origin + "/en/", 302);
+      return noCacheRedirect(url.origin + "/en/");
     }
 
     // 3. Default: home italiana
-    return env.ASSETS.fetch(request);
+    return serveItalianHome(request, env);
   }
 };
+
+/**
+ * Serve la home italiana dagli asset statici, ma con header che impediscono
+ * al browser di riusare una risposta in cache saltando il Worker.
+ * Senza questo, dopo un reload lo switch lingua potrebbe non reagire.
+ */
+async function serveItalianHome(request, env) {
+  const assetResponse = await env.ASSETS.fetch(request);
+  const response = new Response(assetResponse.body, assetResponse);
+  response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+  response.headers.set("Vary", "Cookie, Accept-Language");
+  return response;
+}
+
+/**
+ * Redirect 302 che il browser NON deve mettere in cache.
+ * Senza questi header, il browser memorizza il redirect e non interroga
+ * più il Worker: il cookie di preferenza verrebbe ignorato ai reload.
+ */
+function noCacheRedirect(location) {
+  return new Response(null, {
+    status: 302,
+    headers: {
+      "Location": location,
+      "Cache-Control": "no-store, no-cache, must-revalidate",
+      "Vary": "Cookie, Accept-Language"
+    }
+  });
+}
 
 /**
  * Ritorna true se il browser preferisce l'inglese all'italiano.
