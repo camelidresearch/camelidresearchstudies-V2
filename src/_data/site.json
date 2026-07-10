@@ -18,14 +18,43 @@
   },
   "privacyUpdated": "29 giugno 2026",
   "nav": [
-    { "label": "Chi siamo", "url": "/chi-siamo/" },
-    { "label": "Progetti", "url": "/progetti/" },
-    { "label": "IAA", "url": "/iaa/" },
-    { "label": "Board", "url": "/board/" },
-    { "label": "Partner", "url": "/partner/" },
-    { "label": "Risorse", "url": "/risorse/" },
-    { "label": "Parlano di noi", "url": "/parlano-di-noi/" },
-    { "label": "Contatti", "url": "/contatti/" }
+    {
+      "label": "Chi siamo",
+      "url": "/chi-siamo/"
+    },
+    {
+      "label": "Progetti",
+      "url": "/progetti/"
+    },
+    {
+      "label": "IAA",
+      "url": "/iaa/"
+    },
+    {
+      "label": "Board",
+      "url": "/board/"
+    },
+    {
+      "label": "Partner",
+      "url": "/partner/"
+    },
+    {
+      "label": "Risorse",
+      "url": "/risorse/"
+    },
+    {
+      "label": "Parlano di noi",
+      "url": "/parlano-di-noi/"
+    },
+    {
+      "label": "Contatti",
+      "url": "/contatti/"
+    }
   ],
-  "social": []
+  "social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/camelidresearchstudies/"
+    }
+  ]
 }
