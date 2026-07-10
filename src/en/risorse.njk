@@ -24,7 +24,6 @@ permalink: /en/risorse/
       {% endfor %}
     </div>
     {% elif articoliIt | length %}
-    <p class="empty-note" style="margin-bottom:1.5rem">Our news articles are currently published in Italian only.</p>
     <div class="rows">
       {% for a in articoliIt %}
       <a class="row" href="{{ a.url }}">
@@ -86,7 +85,6 @@ permalink: /en/risorse/
       {% endfor %}
     </div>
     {% elif apprIt | length %}
-    <p class="empty-note" style="margin-bottom:1.5rem">Our outreach articles are currently published in Italian only.</p>
     <div class="rows">
       {% for a in apprIt %}
       <a class="row" href="{{ a.url }}">
