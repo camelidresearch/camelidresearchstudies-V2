@@ -55,8 +55,22 @@ description: "News, pubblicazioni e materiali divulgativi sulla salute e sul ben
 
 <section class="bg-soft">
   <div class="container">
-    <div class="eyebrow">Pubblicazioni e materiali</div>
+    <div class="eyebrow">Approfondimenti</div>
     <h2>Materiali <em>divulgativi</em></h2>
+    <p class="lead">Articoli informativi su alpaca e lama, basati su fonti scientifiche e curati dall'associazione.</p>
+    {% set approfondimenti = collections.divulgazione | reverse %}
+    {% if approfondimenti | length %}
+    <div class="rows">
+      {% for a in approfondimenti %}
+      <a class="row" href="{{ a.url }}">
+        <span class="meta">{{ a.date | dataIt }}</span>
+        <span class="title">{{ a.data.title }}{% if a.data.sommario %}<small>{{ a.data.sommario }}</small>{% endif %}</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
     <div class="empty-note">L'associazione è di recente costituzione: le prime pubblicazioni e i materiali divulgativi arriveranno con l'avvio dei progetti 2026&ndash;2027.</div>
+    {% endif %}
   </div>
 </section>

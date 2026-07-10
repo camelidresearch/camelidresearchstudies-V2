@@ -40,7 +40,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("news_en", c => c.getFilteredByGlob("./src/news/en/*.md"));
   eleventyConfig.addCollection("biblioteca", c => c.getFilteredByGlob("./src/biblioteca/it/*.md"));
   eleventyConfig.addCollection("biblioteca_en", c => c.getFilteredByGlob("./src/biblioteca/en/*.md"));
-
+  eleventyConfig.addCollection("divulgazione", c => c.getFilteredByGlob("src/divulgazione/it/*.md"));
+  eleventyConfig.addCollection("divulgazione_en", c => c.getFilteredByGlob("src/divulgazione/en/*.md"));
   // QR code SVG generato in build (Biblioteca scientifica)
   eleventyConfig.addAsyncShortcode("qrcode", async function (url) {
     try {

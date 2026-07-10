@@ -1,0 +1,5 @@
+{
+  "layout": "news-article.njk",
+  "hideHeader": true,
+  "permalink": "/risorse/approfondimenti/{{ page.fileSlug }}/"
+}

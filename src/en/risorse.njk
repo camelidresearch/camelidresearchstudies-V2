@@ -70,8 +70,34 @@ permalink: /en/risorse/
 
 <section class="bg-soft">
   <div class="container">
-    <div class="eyebrow">Publications and materials</div>
+    <div class="eyebrow">Deep dives</div>
     <h2>Outreach <em>materials</em></h2>
+    <p class="lead">Informative articles on alpacas and llamas, based on scientific sources and curated by the association.</p>
+    {% set apprEn = collections.divulgazione_en | reverse %}
+    {% set apprIt = collections.divulgazione | reverse %}
+    {% if apprEn | length %}
+    <div class="rows">
+      {% for a in apprEn %}
+      <a class="row" href="{{ a.url }}">
+        <span class="meta">{{ a.date | dataIt }}</span>
+        <span class="title">{{ a.data.title }}{% if a.data.sommario %}<small>{{ a.data.sommario }}</small>{% endif %}</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% elif apprIt | length %}
+    <p class="empty-note" style="margin-bottom:1.5rem">Our outreach articles are currently published in Italian only.</p>
+    <div class="rows">
+      {% for a in apprIt %}
+      <a class="row" href="{{ a.url }}">
+        <span class="meta">{{ a.date | dataIt }}</span>
+        <span class="title">{{ a.data.title }}{% if a.data.sommario %}<small>{{ a.data.sommario }}</small>{% endif %}</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
     <div class="empty-note">The association is newly established: the first publications and outreach materials will arrive with the launch of the 2026&ndash;2027 projects.</div>
+    {% endif %}
   </div>
 </section>

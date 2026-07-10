@@ -56,6 +56,44 @@ collections:
         hint: "OBBLIGATORIA se carichi una foto: descrivi cosa si vede, es. 'Un alpaca bianco al pascolo tra gli ulivi'. Senza descrizione il sito non si pubblica."
       - { name: body, label: "Testo dell'articolo", widget: markdown, i18n: true, required: [it] }
 
+  # ── Materiale divulgativo ──
+  - name: divulgazione
+    label: Materiali divulgativi
+    label_singular: Articolo divulgativo
+    folder: src/divulgazione
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sort_by: date
+    fields:
+      - { name: title, label: Titolo, widget: string, i18n: true, required: [it] }
+      - { name: date, label: Data di pubblicazione, widget: datetime, format: "YYYY-MM-DD", time_format: false, i18n: duplicate }
+      - name: autore
+        label: Autore
+        widget: select
+        default: redazione
+        i18n: duplicate
+        options:
+          - { label: "Dr.ssa Camilla Esclapon de Villeneuve", value: camilla }
+          - { label: "Dr.ssa Alessia Ciaramelli", value: alessia }
+          - { label: "Redazione (Camelid Research Studies APS)", value: redazione }
+      - name: sommario
+        label: Sommario
+        widget: text
+        i18n: true
+        required: [it]
+        hint: "Una o due frasi. Appare nell'elenco e come descrizione su Google."
+      - { name: immagine, label: "Foto (opzionale)", widget: image, required: false, i18n: duplicate }
+      - name: immagine_alt
+        label: "Descrizione della foto"
+        widget: string
+        required: false
+        i18n: true
+        hint: "OBBLIGATORIA se carichi una foto: senza descrizione il sito non si pubblica."
+      - { name: body, label: "Testo dell'articolo", widget: markdown, i18n: true, required: [it] }
+
   # ── Biblioteca scientifica ──
   - name: biblioteca
     label: Biblioteca scientifica
