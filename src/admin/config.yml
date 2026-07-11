@@ -107,7 +107,7 @@ collections:
     summary: "{{fields.code}} — {{fields.title}}"
     fields:
       - { name: code, label: Codice scheda, widget: string, i18n: duplicate, hint: "Es. CRL-A-001" }
-      - { name: title, label: Titolo dell'articolo, widget: string, i18n: true, required: [it] }
+      - { name: title, label: Titolo dell'articolo, widget: string, i18n: true, required: [en] }
       - { name: authors, label: Autori, widget: string, i18n: duplicate }
       - { name: journal, label: Rivista, widget: string, i18n: duplicate }
       - { name: year, label: Anno, widget: number, value_type: int, i18n: duplicate }
@@ -162,48 +162,47 @@ collections:
         label: Colpo d'occhio (punti chiave)
         widget: list
         i18n: true
-        field: { name: point, label: Punto, widget: string }
-        required: [it]
-      - { name: objective, label: Objective, widget: text, i18n: true, required: [it] }
-      - { name: background, label: Background, widget: text, i18n: true, required: [it] }
-      - { name: methods, label: Methods, widget: text, i18n: true, required: [it] }
+        required: [en]
+        field: { name: point, label: Punto, widget: string, i18n: true }
+      - { name: objective, label: Objective, widget: text, i18n: true, required: [en] }
+      - { name: background, label: Background, widget: text, i18n: true, required: [en] }
+      - { name: methods, label: Methods, widget: text, i18n: true, required: [en] }
       - name: protocol
         label: Protocol
         widget: object
         i18n: true
-        required: [it]
         fields:
-          - { name: patient, label: Patient, widget: text, required: false }
-          - { name: anaesthetic, label: Anaesthetic Protocol, widget: text, required: false }
-          - { name: surgical, label: Surgical Procedure, widget: text, required: false }
-          - { name: nerve_block, label: Specific Technique, widget: text, required: false }
-          - { name: monitoring, label: Monitoring, widget: text, required: false }
+          - { name: patient, label: Patient, widget: text, required: false, i18n: true }
+          - { name: anaesthetic, label: Anaesthetic Protocol, widget: text, required: false, i18n: true }
+          - { name: surgical, label: Surgical Procedure, widget: text, required: false, i18n: true }
+          - { name: nerve_block, label: Specific Technique, widget: text, required: false, i18n: true }
+          - { name: monitoring, label: Monitoring, widget: text, required: false, i18n: true }
       - name: findings
         label: Key Findings
         widget: list
         i18n: true
-        required: [it]
-        field: { name: finding, label: Finding, widget: string }
+        required: [en]
+        field: { name: finding, label: Finding, widget: string, i18n: true }
       - name: clinical_implications
         label: Clinical Implications
         widget: list
         i18n: true
-        required: [it]
-        field: { name: implication, label: Implication, widget: string }
+        required: [en]
+        field: { name: implication, label: Implication, widget: string, i18n: true }
       - name: limitations
         label: Limitations
         widget: list
         i18n: true
-        required: [it]
-        field: { name: limitation, label: Limitation, widget: string }
+        required: [en]
+        field: { name: limitation, label: Limitation, widget: string, i18n: true }
       - name: take_home
         label: Key Take-Home Messages
         widget: list
         i18n: true
-        required: [it]
-        field: { name: message, label: Message, widget: string }
+        required: [en]
+        field: { name: message, label: Message, widget: string, i18n: true }
       - { name: citation, label: Citazione completa, widget: text, i18n: duplicate }
-      - { name: body, label: "Commentary (testo libero dell'associazione)", widget: markdown, i18n: true, required: [it] }
+      - { name: body, label: "Commentary (testo libero dell'associazione)", widget: markdown, i18n: true }
 
   # ── Contenuti del sito (file singoli, non bilingui via CMS) ──
   - name: contenuti
