@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   // Copia gli asset statici (CSS, immagini) così come sono
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
 
   //Sveltia News, Progetti e Board
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });

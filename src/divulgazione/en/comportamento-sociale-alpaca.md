@@ -2,7 +2,7 @@
 title: The social behavior of alpacas
 date: 2026-07-10
 autore: redazione
-sommario: '"Alpacas are deeply social animals: understanding how they live in groups is the first step to ensuring their well-being."'
+sommario: 'Alpacas are deeply social animals: understanding how they live in groups is the first step to ensuring their well-being.'
 immagine: null
 immagine_alt: ''
 ---

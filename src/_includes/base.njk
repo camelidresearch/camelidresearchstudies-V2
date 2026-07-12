@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} · {% endif %}{{ site.legalName }}</title>
   <meta name="description" content="{{ description or site.tagline }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {# OpenGraph / social sharing #}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.legalName }}">
+  <meta property="og:title" content="{% if title %}{{ title }} · {% endif %}{{ site.legalName }}">
+  <meta property="og:description" content="{{ description or site.tagline }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/logo.png">
+  <meta property="og:locale" content="{% if (lang or 'it') == 'en' %}en_US{% else %}it_IT{% endif %}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% if title %}{{ title }} · {% endif %}{{ site.legalName }}">
+  <meta name="twitter:description" content="{{ description or site.tagline }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/logo.png">
   <link rel="icon" type="image/png" href="/assets/img/logo-128.png">
   <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dmserif-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -17,8 +30,9 @@
   {% endif %}
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Salta al contenuto</a>
   {% include "partials/nav.njk" %}
-  <main>
+  <main id="main-content">
     {% if not hideHeader %}
     <header class="page-header">
       <div class="hero-dots"></div>

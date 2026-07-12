@@ -1,5 +1,8 @@
 {
   "layout": "news-article.njk",
   "hideHeader": true,
-  "permalink": "/risorse/approfondimenti/{{ page.fileSlug }}/"
+  "permalink": "/risorse/approfondimenti/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "description": "{{ sommario }}"
+  }
 }

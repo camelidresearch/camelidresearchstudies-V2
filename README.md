@@ -1,6 +1,6 @@
 # Camelid Research Studies APS — sito
 
-Sito statico multipagina costruito con **Eleventy (11ty)**, pensato per essere pubblicato su **GitHub + Cloudflare Pages**.
+Sito statico multipagina costruito con **Eleventy (11ty)**, pensato per essere pubblicato su **GitHub + Cloudflare Workers**.
 
 ## Requisiti
 
