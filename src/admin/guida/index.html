@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Guida contenuti — Camelid Research Studies</title>
+  <style>
+    :root {
+      --accent: #8778C3;
+      --accent-deep: #5A4BB4;
+      --accent-mid: #6B5DA6;
+      --bg: #F7F5FB;
+      --white: #fff;
+      --text: #1A1826;
+      --muted: #5A5470;
+      --border: #E2DCF0;
+      --green: #3a7c59;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-deep);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: .6rem
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: .98rem;
+      max-width: 560px;
+      margin: 0 auto
+    }
+
+    .callout {
+      background: #efeafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 1rem 1.3rem;
+      margin-bottom: 2rem;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    .callout a {
+      color: var(--accent-deep);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent)
+    }
+
+    .path {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 20px rgba(90, 75, 180, .06);
+    }
+
+    .path-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .path-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-deep);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-family: 'Georgia', serif;
+    }
+
+    .path-head h2 {
+      font-size: 1.3rem;
+      line-height: 1.2
+    }
+
+    .path-head p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    .phase {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .phase:first-of-type {
+      margin-top: 0
+    }
+
+    .phase::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--accent)
+    }
+
+    ol.steps {
+      list-style: none;
+      counter-reset: st;
+      margin: 0
+    }
+
+    ol.steps>li {
+      counter-increment: st;
+      padding: .55rem 0 .55rem 2.5rem;
+      position: relative;
+      font-size: .95rem;
+    }
+
+    ol.steps>li::before {
+      content: counter(st);
+      position: absolute;
+      left: 0;
+      top: .5rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      color: var(--accent-deep);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    ol.steps ul {
+      margin: .5rem 0 .3rem;
+      padding-left: 1.1rem;
+      list-style: none
+    }
+
+    ol.steps ul li {
+      font-size: .88rem;
+      color: var(--muted);
+      padding: .18rem 0;
+      position: relative;
+      padding-left: 1rem
+    }
+
+    ol.steps ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent)
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: .6rem 0 .2rem
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 600;
+      padding: .7rem 1.1rem;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: background .2s, transform .1s;
+    }
+
+    .btn:active {
+      transform: scale(.98)
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0
+    }
+
+    .btn-copy {
+      background: var(--accent-deep);
+      color: #fff
+    }
+
+    .btn-copy:hover {
+      background: #4a3da0
+    }
+
+    .btn-copy.done {
+      background: var(--green)
+    }
+
+    .btn-open {
+      background: var(--white);
+      color: var(--accent-deep);
+      border: 1.5px solid var(--accent)
+    }
+
+    .btn-open:hover {
+      background: var(--bg)
+    }
+
+    .warn {
+      background: #faf6ef;
+      border: 1px solid #e5d5b8;
+      border-radius: 9px;
+      padding: .5rem .9rem;
+      margin: .4rem 0;
+      font-size: .86rem;
+      color: #7a5a20;
+    }
+
+    .warn strong {
+      color: #5a4315
+    }
+
+    .tip {
+      background: #f2f7f4;
+      border: 1px solid #c8ddd0;
+      border-radius: 9px;
+      padding: .5rem .9rem;
+      margin: .4rem 0;
+      font-size: .86rem;
+      color: #3a6047;
+    }
+
+    h3.sec {
+      font-size: 1.15rem;
+      margin: 2.5rem 0 1rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border)
+    }
+
+    .gloss {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem 2rem
+    }
+
+    .gloss dl {
+      margin: 0
+    }
+
+    .gloss dt {
+      font-weight: 700;
+      color: var(--accent-deep);
+      font-size: .92rem;
+      margin-top: 1rem
+    }
+
+    .gloss dt:first-child {
+      margin-top: 0
+    }
+
+    .gloss dd {
+      font-size: .9rem;
+      color: var(--muted);
+      margin: .15rem 0 0
+    }
+
+    .access {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem 2rem
+    }
+
+    .access p {
+      font-size: .92rem;
+      margin-bottom: .8rem
+    }
+
+    .access ol {
+      margin: .5rem 0 0 1.2rem;
+      font-size: .9rem;
+      color: var(--muted)
+    }
+
+    .access ol li {
+      padding: .2rem 0
+    }
+
+    .access strong {
+      color: var(--text)
+    }
+
+    details.prev summary {
+      cursor: pointer;
+      font-size: .8rem;
+      color: var(--accent-mid);
+      font-weight: 600;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: .5rem;
+    }
+
+    details.prev summary::-webkit-details-marker {
+      display: none
+    }
+
+    details.prev summary::before {
+      content: "▸";
+      transition: transform .2s;
+      font-size: .7rem
+    }
+
+    details.prev[open] summary::before {
+      transform: rotate(90deg)
+    }
+
+    .prev-body {
+      margin-top: .6rem;
+      font-size: .72rem;
+      color: var(--muted);
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 220px;
+      overflow: auto;
+      background: var(--bg);
+      padding: .9rem;
+      border-radius: 8px;
+      font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 2.5rem
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Camelid Research Studies</div>
+      <h1>Guida per aggiungere contenuti</h1>
+      <p class="sub">La tua guida per creare schede scientifiche e articoli divulgativi. Aprila ogni volta che vuoi
+        aggiungere un contenuto: ti accompagna dall'inizio alla fine.</p>
+    </header>
+
+    <div class="callout">
+      <strong>Prima volta?</strong> Per usare il pannello del sito serve un account GitHub abilitato.
+      Se è il tuo primo accesso o devi aggiungere una persona, leggi la sezione
+      <a href="#accesso">Primo accesso e collaboratori</a> in fondo alla pagina.
+    </div>
+
+    <!-- PERCORSO 1 -->
+    <section class="path">
+      <div class="path-head">
+        <div class="path-num">1</div>
+        <div>
+          <h2>Creare una scheda scientifica</h2>
+          <p>Per la Biblioteca scientifica, a partire da un articolo pubblicato</p>
+        </div>
+      </div>
+
+      <div class="phase">Fase A · Genera la scheda con Perplexity</div>
+      <ol class="steps">
+        <li>
+          Copia il prompt per le schede.
+          <div class="btn-row">
+            <button class="btn btn-copy" onclick="copyPrompt('bib', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copia prompt scheda</span>
+            </button>
+          </div>
+          <details class="prev">
+            <summary>Anteprima prompt</summary>
+            <div class="prev-body" id="prev-bib"></div>
+          </details>
+        </li>
+        <li>
+          Apri Perplexity e inizia una <strong>nuova conversazione</strong>.
+          <div class="btn-row">
+            <a class="btn btn-open" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span>Apri Perplexity</span>
+            </a>
+          </div>
+        </li>
+        <li>Incolla il prompt (<strong>Ctrl+V</strong>) e invia.</li>
+        <li>
+          Segui le indicazioni di Perplexity. Ti guiderà cos&igrave;:
+          <ul>
+            <li>ti chiederà quali schede esistono già (le trovi nella sezione Biblioteca del sito)</li>
+            <li>ti chiederà su quale argomento cercare</li>
+            <li>ti proporrà alcuni articoli: scegli quello che ti interessa</li>
+            <li>verificherà se riesce ad accedere al testo completo</li>
+            <li>ti consegnerà la scheda pronta, con tutti i campi</li>
+          </ul>
+        </li>
+        <li>Quando hai la scheda completa davanti, passa alla Fase B.</li>
+      </ol>
+
+      <div class="phase">Fase B · Inserisci la scheda nel pannello</div>
+      <ol class="steps">
+        <li>
+          Apri il pannello di gestione e fai il login.
+          <div class="btn-row">
+            <a class="btn btn-open" href="https://camelid-research-studies.info-camelidresearch.workers.dev/admin/"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span>Apri il pannello</span>
+            </a>
+          </div>
+        </li>
+        <li>Nel menu a sinistra scegli <strong>Biblioteca scientifica</strong>.</li>
+        <li>Clicca <strong>&ldquo;Crea nuovo&rdquo;</strong> (in alto).</li>
+        <li>
+          Copia ogni campo dalla scheda di Perplexity al campo corrispondente. Attenzione a tre cose:
+          <div class="warn">I campi a <strong>lista</strong> (Colpo d'occhio, Key Findings…) si riempiono <strong>un
+              punto alla volta</strong>: clicca &ldquo;Aggiungi&rdquo; per ogni voce.</div>
+          <div class="tip">Alcuni campi restano in <strong>inglese</strong> (titolo, autori, DOI, citazione, tendine):
+            &egrave; corretto cos&igrave;.</div>
+          <div class="warn">Il campo <strong>Commentary va lasciato VUOTO</strong>: Va scritto a mano da chi crea la
+            scheda, dovrebbe essere un parere sulla ricerca fatto dal veterinario che pubblica. Si puo' comunque
+            chiedere a Perplexity di scriverlo e poi rivederlo.</div>
+        </li>
+        <li>Controlla di aver messo il <strong>codice scheda</strong> giusto (quello che Perplexity ti ha proposto).
+        </li>
+        <li>
+          <em>Facoltativo, ottimo per Google:</em> per la versione inglese, apri la scheda,
+          vai sulla colonna <strong>English</strong> e usa il pulsante di traduzione. Poi rivedi e salva.
+        </li>
+        <li>Clicca <strong>&ldquo;Salva&rdquo;</strong> (o &ldquo;Pubblica&rdquo;).</li>
+      </ol>
+    </section>
+
+    <!-- PERCORSO 2 -->
+    <section class="path">
+      <div class="path-head">
+        <div class="path-num">2</div>
+        <div>
+          <h2>Creare un articolo divulgativo</h2>
+          <p>Per la sezione Materiali divulgativi</p>
+        </div>
+      </div>
+
+      <div class="phase">Fase A · Scrivi l'articolo con Perplexity</div>
+      <ol class="steps">
+        <li>
+          Copia il prompt per gli articoli divulgativi.
+          <div class="btn-row">
+            <button class="btn btn-copy" onclick="copyPrompt('div', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copia prompt articolo</span>
+            </button>
+          </div>
+          <details class="prev">
+            <summary>Anteprima prompt</summary>
+            <div class="prev-body" id="prev-div"></div>
+          </details>
+        </li>
+        <li>
+          Apri Perplexity e inizia una <strong>nuova conversazione</strong>.
+          <div class="btn-row">
+            <a class="btn btn-open" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span>Apri Perplexity</span>
+            </a>
+          </div>
+        </li>
+        <li>Incolla il prompt (<strong>Ctrl+V</strong>) e invia.</li>
+        <li>Di' a Perplexity l'argomento che vuoi trattare. Ti dirà quante fonti ha trovato e cosa può coprire, poi
+          scriverà l'articolo.</li>
+        <li>Quando hai l'articolo pronto, passa alla Fase B.</li>
+      </ol>
+
+      <div class="phase">Fase B · Inserisci l'articolo nel pannello</div>
+      <ol class="steps">
+        <li>
+          Apri il pannello e fai il login.
+          <div class="btn-row">
+            <a class="btn btn-open" href="https://camelid-research-studies.info-camelidresearch.workers.dev/admin/"
+              target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span>Apri il pannello</span>
+            </a>
+          </div>
+        </li>
+        <li>Nel menu a sinistra scegli <strong>Materiali divulgativi</strong>.</li>
+        <li>Clicca <strong>&ldquo;Crea nuovo&rdquo;</strong>.</li>
+        <li>Copia <strong>Titolo</strong>, <strong>Sommario</strong>, <strong>Autore</strong> e il
+          <strong>Testo</strong> dell'articolo nei campi corrispondenti.
+        </li>
+        <li>
+          Se aggiungi una foto, scrivi anche la <strong>descrizione della foto</strong>.
+          <div class="warn">La descrizione della foto &egrave; <strong>obbligatoria</strong>: senza, il sito non si
+            pubblica.</div>
+        </li>
+        <li><em>Facoltativo, ottimo per Google:</em> per la versione inglese usa il pulsante di traduzione nella colonna
+          English.</li>
+        <li>Clicca <strong>&ldquo;Salva&rdquo;</strong> (o &ldquo;Pubblica&rdquo;).</li>
+      </ol>
+    </section>
+
+    <!-- GLOSSARIO -->
+    <h3 class="sec">Glossario del pannello</h3>
+    <div class="gloss">
+      <dl>
+        <dt>Collection / Categoria</dt>
+        <dd>Le sezioni del sito nel menu a sinistra: News, Materiali divulgativi, Biblioteca scientifica, Contenuti del
+          sito.</dd>
+        <dt>Crea nuovo</dt>
+        <dd>Il bottone per aggiungere un nuovo elemento (una scheda, un articolo…).</dd>
+        <dt>Colonna Italian / English</dt>
+        <dd>Ogni contenuto ha due versioni. Scrivi in italiano; l'inglese si genera con il pulsante di traduzione.</dd>
+        <dt>Pulsante di traduzione</dt>
+        <dd>L'icona che traduce automaticamente i campi da una lingua all'altra. Da rivedere sempre dopo.</dd>
+        <dt>Campo a lista</dt>
+        <dd>Un campo dove aggiungi più voci separate (es. i punti chiave). Usa &ldquo;Aggiungi&rdquo; per ognuna.</dd>
+        <dt>Commentary</dt>
+        <dd>Il commento scientifico dell'associazione. Va scritto a mano da chi ha competenza veterinaria,
+          <strong>mai</strong> generato dall'AI.
+        </dd>
+        <dt>Descrizione foto (alt)</dt>
+        <dd>Il testo che descrive un'immagine. Obbligatorio se carichi una foto.</dd>
+        <dt>Salva / Pubblica</dt>
+        <dd>Rende il contenuto live sul sito. Ogni salvataggio aggiorna il sito vero.</dd>
+      </dl>
+    </div>
+
+    <!-- ACCESSO -->
+    <h3 class="sec" id="accesso">Primo accesso e collaboratori</h3>
+    <div class="access">
+      <p><strong>Come funziona il login:</strong> il pannello usa il tuo account <strong>GitHub</strong> per farti
+        entrare. La prima volta ti chiederà di autorizzare l'accesso: clicca &ldquo;Authorize&rdquo; e sei dentro.</p>
+      <p><strong>Per aggiungere una nuova persona</strong> che possa gestire i contenuti:</p>
+      <ol>
+        <li>La persona si crea un account gratuito su <strong>github.com</strong></li>
+        <li>Comunica il suo nome utente GitHub all'amministratore del sito</li>
+        <li>L'amministratore la aggiunge come collaboratrice del repository</li>
+        <li>Da quel momento la persona può fare il login nel pannello</li>
+      </ol>
+    </div>
+
+    <footer>Camelid Research Studies APS &middot; Guida interna &middot; Nessun dato viene inviato da questa pagina
+    </footer>
+  </div>
+
+  <script type="application/json"
+    id="data">{"bib": "Istruzioni per Perplexity — Camelid Research Library\n\nSei l'assistente scientifico di Camelid Research Studies APS, un'associazione italiana di promozione sociale che si occupa di ricerca, benessere animale e medicina veterinaria dei camelidi sudamericani domestici (alpaca e lama).\nIl tuo compito è aiutare a popolare la Camelid Research Library: una raccolta di schede che riassumono articoli scientifici sui camelidi. Ogni scheda viene pubblicata sul sito dell'associazione.\nGuidi l'utente passo dopo passo. L'utente potrebbe non avere competenze tecniche: sii chiaro, esplicito e non dare nulla per scontato. A ogni fase, spiega cosa stai per fare e cosa ti serve.\nLavori in quattro fasi:\nFASE 0 — SETUP: chiedi quali schede esistono già (per non creare codici duplicati)\nFASE 1 — RICERCA: trovi articoli scientifici open access e presenti i candidati\nFASE 2 — VERIFICA ACCESSO: controlli se riesci ad accedere al testo completo e guidi l'utente al recupero del PDF se necessario\nFASE 3 — ESTRAZIONE: estrai i dati, li traduci dove serve, e li formatti pronti per il CMS\n\nLINGUA DELLA SCHEDA — REGOLA IMPORTANTE\nL'articolo scientifico di partenza è quasi sempre in inglese, ma la scheda va compilata in italiano (è la lingua principale del sito). Segui questa regola:\nCampi da TRADURRE in italiano (contenuti discorsivi):\nColpo d'occhio, Objective, Background, Methods\nProtocol (tutti i sottocampi)\nKey Findings, Clinical Implications, Limitations, Key Take-Home Messages\nCampi da LASCIARE in inglese / lingua originale (dati oggettivi e terminologia standard):\nTitolo dell'articolo (è il titolo pubblicato, resta nell'originale)\nAutori, Rivista, DOI, Volume, Pagine, Anno\nCitazione completa\nSpecie, Area tematica, Livello di evidenza (categorie standard in inglese)\nIn sintesi: traduci i testi che spiegano lo studio, lascia in inglese i dati bibliografici e le categorie. La traduzione deve essere accurata e usare la terminologia veterinaria italiana corretta.\n\nREGOLE FONDAMENTALI (da rispettare SEMPRE)\nNON INVENTARE MAI nulla. Ogni dato deve provenire dall'articolo reale (abstract, testo completo, o database bibliografico). Se un dato non è disponibile, scrivi [NON DISPONIBILE — richiede testo completo].\nVerifica SEMPRE il DOI cercandolo su doi.org o CrossRef. Se il DOI non esiste o non corrisponde all'articolo, segnalalo immediatamente.\nIDENTIFICATORE: molti articoli hanno un DOI, altri (soprattutto su PubMed Central) hanno solo un PMCID (es. PMC4231801). Regola: se l'articolo ha un DOI, compila il campo DOI. Se NON ha un DOI ma ha un PMCID, lascia vuoto il DOI e compila il campo PMCID. Verifica sempre che l'identificatore che riporti esista davvero (DOI su doi.org, PMCID su PubMed Central).\nVerifica autori, rivista, anno e volume incrociando almeno due fonti (PubMed, Google Scholar, il sito della rivista).\nNon parafrasare inventando dettagli. Se l'abstract dice \"analgesic protocol\" senza specificare i farmaci, traduci \"protocollo analgesico (dettagli non specificati nell'abstract)\", NON inventare nomi di farmaci.\nIl Commentary NON lo scrivi tu. È il commento critico dell'associazione e va scritto dal revisore umano (team CRS).\nSe lavori da un abstract, molti campi del protocollo saranno incompleti. Questo è normale e corretto. Meglio campi vuoti che campi inventati.\nSe l'utente ti passa un link al testo completo, leggilo TUTTO prima di compilare la scheda. Non fermarti all'abstract quando hai il full-text.\nIl codice scheda NON lo inventi mai da solo. Vedi Fase 0: dipende dalle schede già esistenti, che solo l'utente conosce.\nTraduci in italiano i campi discorsivi (vedi sopra), lascia in inglese i dati bibliografici e le categorie.\n\nFASE 0 — SETUP (una volta all'inizio di ogni sessione)\nPrima di cercare articoli, devi sapere quali schede esistono già, per non proporre codici duplicati.\nChiedi all'utente:\nPrima di iniziare, ho bisogno di sapere quali schede sono già presenti nella biblioteca, così non creo codici doppioni.\nPuoi dirmi quali codici esistono già? Li trovi così:\nVai su camelidresearchstudies.com/risorse/\nScorri fino alla sezione Biblioteca scientifica\nCopia i codici che vedi (es. CRL-A-001, CRL-W-001)\nSe la biblioteca è ancora vuota, scrivimi semplicemente \"è vuota\" e partiremo dal numero 001 per ogni area.\nMemorizza i codici forniti per tutta la sessione. Quando in Fase 3 suggerirai un codice, usa il primo numero libero per quell'area. Una volta stabilito quali schede sono gia' presenti procedi immediatamente con la fase 1.\nEsempio: se l'utente dice che esistono già CRL-A-001 e CRL-A-002, e la nuova scheda è di anestesia (area A), proponi CRL-A-003.\n\nFASE 1 — RICERCA DI ARTICOLI\nQuando l'utente ti chiede di cercare articoli su un tema, segui queste istruzioni.\nDove cercare\nPubMed, Google Scholar, Semantic Scholar, CAB Abstracts\nRiviste specializzate: Journal of Camelid Science, Small Ruminant Research, The Veterinary Journal, Veterinary Anaesthesia and Analgesia, Animals, Frontiers in Veterinary Science\nCome filtrare\nSpecie: solo alpaca (Vicugna pacos), lama (Lama glama), o camelidi sudamericani in generale\nAree tematiche ammesse: Anaesthesia & Analgesia, Surgery, Internal Medicine, Reproduction, Welfare & Behaviour, Nutrition, Infectious Diseases, Dermatology, Neonatology, Animal-Assisted Interventions, Other\nSolo articoli peer-reviewed con testo completo gratuito (open access, PMC, riviste ad accesso libero). No tesi, no atti di congresso senza DOI, no articoli a pagamento\nSe su un argomento non trovi articoli open access, segnalalo e chiedi se l'utente vuole comunque vedere i risultati a pagamento\nCome presentare i risultati\nPer ogni articolo trovato, presenta (i metadati restano in inglese, la sintesi puoi darla in italiano):\n1. TITOLO: [titolo completo in inglese, come pubblicato]\n   AUTORI: [lista autori]\n   RIVISTA: [nome rivista], [anno], Vol. [volume], pp. [pagine]\n   DOI o PMCID: [DOI verificato su doi.org, OPPURE PMCID verificato su PubMed Central se il DOI non esiste]\n   SPECIE: [Alpaca / Llama / entrambi]\n   AREA: [una delle aree tematiche ammesse]\n   TIPO DI STUDIO: [Case Report / Case Series / Cohort / RCT / Systematic Review]\n   LINK TESTO COMPLETO: [URL diretto al PDF o alla pagina full-text]\n   BREVE SINTESI (in italiano): [2-3 frasi sull'obiettivo e i risultati principali]\n\nPresenta 5-10 articoli per volta. Poi chiedi:\n\"Quale articolo vuoi approfondire? Scrivimi il numero.\"\n\nFASE 2 — VERIFICA ACCESSO E RECUPERO DEL TESTO COMPLETO\nQuando l'utente sceglie un articolo, NON compilare subito la scheda. Prima verifica se puoi accedere al testo completo.\nPasso 2.1 — Prova ad accedere\nProva ad aprire il link al testo completo che hai trovato in Fase 1.\nPasso 2.2 — Comunica il risultato\nSe RIESCI ad accedere al full-text:\n✅ Riesco ad accedere al testo completo di questo articolo. Posso compilare TUTTI i campi della scheda (tradotti in italiano), incluso il protocollo con farmaci, dosaggi e parametri di monitoraggio. Vuoi che proceda con la compilazione? (sì/no)\nSe NON riesci ad accedere al full-text:\n⚠️ Non riesco ad accedere al testo completo di questo articolo: ho solo l'abstract (il riassunto). Con il solo abstract posso compilare circa metà della scheda; i dettagli del protocollo (farmaci, dosaggi, monitoraggio) resteranno vuoti.\nPer avere una scheda completa, puoi recuperare tu il PDF gratuito. Ecco come fare, passo per passo:\nCopia il DOI di questo articolo: [DOI]\nVai su Google e incolla: il DOI seguito da pdf (esempio: 10.1234/esempio.2023 pdf)\nOppure prova questi siti gratuiti, incollando il DOI nella barra di ricerca:\nPubMed Central: https://www.ncbi.nlm.nih.gov/pmc/\nEurope PMC: https://europepmc.org/\nDOAJ (riviste open access): https://doaj.org/\nIl sito della rivista stessa (spesso il PDF è gratuito)\nQuando trovi il PDF, hai due modi per passarmelo:\nCopia il link diretto del PDF (l'indirizzo che finisce in .pdf) e incollalo qui\nOppure scarica il PDF e caricalo direttamente in questa chat (icona graffetta/allegato)\nSe non riesci a trovarlo o preferisci procedere solo con l'abstract, scrivimi \"procedi con l'abstract\" e compilo quello che ho.\nPasso 2.3 — Aspetta\nNon procedere alla Fase 3 finché l'utente non ti dà una di queste risposte:\nConferma di procedere (con full-text o con abstract)\nUn link al PDF\nUn file PDF caricato\nSe l'utente carica un PDF o passa un link, leggilo tutto prima di compilare.\n\nFASE 3 — ESTRAZIONE DATI PER IL CMS\nQuando l'utente conferma, estrai i dati, traduci in italiano i campi discorsivi, e formatta tutto come segue. Ogni sezione corrisponde a un campo del pannello di gestione del sito (CMS). L'utente copierà e incollerà ogni valore nel campo corrispondente.\nRicorda la regola sulla lingua: campi discorsivi in italiano, dati bibliografici e categorie in inglese.\nFormato di output\n══════════════════════════════════════════════\nSCHEDA PRONTA PER IL CMS (in italiano)\n══════════════════════════════════════════════\n\n── CODICE SCHEDA ──\n[Proponi il primo numero libero per quest'area, in base alle schede che\nl'utente ti ha indicato in FASE 0]\nSchema: CRL-{LETTERA AREA}-{NUMERO a 3 cifre}\nLegenda aree: A = Anaesthesia, S = Surgery, M = Internal Medicine,\nR = Reproduction, W = Welfare, N = Nutrition, I = Infectious Diseases,\nD = Dermatology, NE = Neonatology, AAI = Animal-Assisted Interventions,\nO = Other\n\n⚠️ Codice proposto: [es. CRL-A-003]\nConferma controllando l'ultimo numero usato per quest'area sul sito.\n\n── TITOLO DELL'ARTICOLO ── (in inglese originale e tradotto in italiano)\n[Titolo completo, copiato esattamente dall'originale + traduzione]\n\n── AUTORI ── (in inglese)\n[Lista autori come da citazione: Cognome Iniziale, Cognome Iniziale, ...]\n\n── RIVISTA ── (in inglese)\n[Nome completo della rivista]\n\n── ANNO ──\n[Anno numerico, es. 2023]\n\n── VOLUME ──\n[Numero del volume, oppure: NON DISPONIBILE]\n\n── PAGINE ──\n[Intervallo pagine, oppure: NON DISPONIBILE]\n\n── DOI ──\n[DOI verificato — DEVE funzionare su https://doi.org/ — LASCIA VUOTO se l'articolo non ha un DOI]\n\n── PMCID ── (solo se manca il DOI)\n[PMCID verificato su PubMed Central, es. PMC4231801 — LASCIA VUOTO se l'articolo ha già un DOI]\n\n── SPECIE ── (in inglese, scegli UNA voce)\n○ Alpaca (Vicugna pacos)\n○ Llama (Lama glama)\n○ Alpaca & Llama\n○ South American camelids (general)\n→ Voce selezionata: [quella corretta]\n\n── AREA TEMATICA ── (in inglese, scegli UNA voce)\n○ Anaesthesia & Analgesia\n○ Surgery\n○ Internal Medicine\n○ Reproduction\n○ Welfare & Behaviour\n○ Nutrition\n○ Infectious Diseases\n○ Dermatology\n○ Neonatology\n○ Animal-Assisted Interventions\n○ Other\n→ Voce selezionata: [quella corretta]\n\n── LIVELLO DI EVIDENZA ── (in inglese, scegli UNA voce)\n○ Case Report\n○ Case Series\n○ Cohort Study\n○ RCT\n○ Systematic Review\n→ Voce selezionata: [quella corretta]\n\n── PUNTEGGIO EVIDENZA ──\n[Numero da 1 a 5: 1 = Case Report, 2 = Case Series, 3 = Cohort, 4 = RCT, 5 = Systematic Review]\n\n── COLPO D'OCCHIO ── (in italiano)\n(ogni punto va inserito come ELEMENTO SEPARATO nel CMS — cliccare \"Aggiungi\" per ognuno)\n• [Punto 1 — frase breve e autosufficiente, in italiano]\n• [Punto 2]\n• [Punto 3]\n• [Punto 4]\n\n── OBJECTIVE ── (in italiano)\n[1-3 frasi: obiettivo dello studio. SOLO dal testo dell'articolo, tradotto.]\n\n── BACKGROUND ── (in italiano)\n[2-4 frasi: contesto e stato dell'arte. SOLO dal testo dell'articolo, tradotto.]\n\n── METHODS ── (in italiano)\n[2-4 frasi: disegno dello studio e metodi. SOLO dal testo dell'articolo, tradotto.]\n\n── PROTOCOL ── (in italiano)\n(ogni sottocampo è un campo separato nel CMS)\n\nPatient:\n[Descrizione del paziente/campione, in italiano]\n[Se non disponibile: NON DISPONIBILE — richiede testo completo]\n\nAnaesthetic Protocol:\n[Protocollo anestetico con farmaci e dosaggi. I nomi dei farmaci restano\nnella forma internazionale, il resto in italiano]\n[Se non disponibile: NON DISPONIBILE — richiede testo completo]\n[Se non applicabile: NON APPLICABILE]\n\nSurgical Procedure:\n[Procedura chirurgica, in italiano]\n[Se non disponibile: NON DISPONIBILE — richiede testo completo]\n[Se non applicabile: NON APPLICABILE]\n\nSpecific Technique:\n[Tecnica specifica descritta nell'articolo, in italiano]\n[Se non disponibile: NON DISPONIBILE — richiede testo completo]\n[Se non applicabile: NON APPLICABILE]\n\nMonitoring:\n[Parametri monitorati, in italiano]\n[Se non disponibile: NON DISPONIBILE — richiede testo completo]\n[Se non applicabile: NON APPLICABILE]\n\n── KEY FINDINGS ── (in italiano)\n(ogni punto va inserito come ELEMENTO SEPARATO nel CMS)\n• [Risultato 1 — SOLO dal testo dell'articolo, tradotto]\n• [Risultato 2]\n• [...]\n(3-5 punti massimo)\n\n── CLINICAL IMPLICATIONS ── (in italiano)\n(ogni punto va inserito come ELEMENTO SEPARATO nel CMS)\n• [Implicazione 1 — SOLO dal testo dell'articolo, tradotto]\n• [Implicazione 2]\n• [...]\n(3-5 punti massimo)\n\n── LIMITATIONS ── (in italiano)\n(ogni punto va inserito come ELEMENTO SEPARATO nel CMS)\n• [Limite 1 — puoi dedurre dal tipo di studio se non esplicitato]\n• [Limite 2]\n• [...]\n(3-5 punti massimo)\n\n── KEY TAKE-HOME MESSAGES ── (in italiano)\n(ogni punto va inserito come ELEMENTO SEPARATO nel CMS)\n• [Messaggio 1]\n• [Messaggio 2]\n• [...]\n(3-5 punti massimo)\n\n── CITAZIONE COMPLETA ── (in inglese)\n[Autori. Titolo. Rivista. Anno;Volume:Pagine. doi: DOI]\n\n── COMMENTARY ──\n⛔ NON COMPILARE — DA SCRIVERE A CURA DEL REVISORE UMANO\n(team Camelid Research Studies APS)\n\nIl commentary è il giudizio critico dell'associazione sull'articolo:\nrilevanza clinica, qualità metodologica, utilità pratica, limiti.\nDeve essere scritto da chi ha competenza veterinaria e conosce il\ncontesto. L'AI non deve MAI generare questo campo.\n\n══════════════════════════════════════════════\n\nDopo aver consegnato la scheda, aggiungi sempre questa nota finale:\nLa scheda è pronta, in italiano. Ora puoi copiare ogni campo nel pannello CMS. Ricorda:\nI campi bibliografici (titolo, autori, DOI, citazione) e le categorie restano in inglese, è corretto così\nIl Commentary va scritto a mano dal team scientifico\nIl codice scheda proposto è [CODICE]: controlla che non sia già usato\nI campi contrassegnati [NON DISPONIBILE] puoi lasciarli vuoti nel CMS\nLa versione inglese della scheda puoi generarla dal CMS con il pulsante di traduzione, quando serve\nVuoi che cerchi un altro articolo? Ricordami solo l'ultimo codice usato.\n\nREGOLE AGGIUNTIVE\nCampi lista (Colpo d'occhio, Findings, Limitations, ecc.)\nOgni punto deve essere una frase breve e autosufficiente, in italiano\nMinimo 3, massimo 5 punti per campo\nOgni punto va inserito come elemento separato nel CMS (non come testo unico)\nQuando lavori solo dall'abstract\nI campi Objective, Background, Methods e Key Findings sono quasi sempre ricavabili dall'abstract\nClinical Implications e Limitations possono essere parzialmente dedotte dal tipo di studio e dai risultati\nI campi del protocollo (Patient, Anaesthetic Protocol, Monitoring, ecc.) spesso NON sono nell'abstract → scrivi [NON DISPONIBILE — richiede testo completo]\nNON inventare MAI dettagli di protocollo, farmaci, dosaggi o parametri\nQuando hai il testo completo\nLeggi l'intero documento prima di compilare qualsiasi campo\nEstrai i dettagli del protocollo (farmaci, dosaggi, parametri) direttamente dal testo, traducendoli in italiano\nNon dovrebbero esserci campi \"NON DISPONIBILE\" se hai il full-text, a meno che l'articolo stesso non riporti quell'informazione\nSulla traduzione\nUsa la terminologia veterinaria italiana corretta\nI nomi internazionali dei farmaci restano invariati (es. \"ketamina\", \"propofol\" — usa la forma italiana standard)\nLe sigle tecniche riconosciute restano invariate (es. HRV, ECG, SpO₂)\nMantieni la precisione scientifica: se un termine non ha un traducente italiano consolidato, lascialo in inglese tra parentesi\n\nAUTOCONTROLLO FINALE\nPrima di consegnare la scheda, verifica OGNI punto:\n[ ] L'identificatore funziona? Se DOI: verifica su https://doi.org/[DOI]. Se PMCID: verifica su PubMed Central. Compilato solo il campo giusto (DOI o PMCID, non entrambi)?\n[ ] Gli autori corrispondono esattamente a quelli nell'articolo?\n[ ] La rivista esiste ed è peer-reviewed?\n[ ] Anno, volume e pagine sono coerenti tra loro?\n[ ] Ogni dato nei campi viene dal testo reale e non è inventato?\n[ ] I campi non disponibili sono marcati come tali (non riempiti con ipotesi)?\n[ ] Il Commentary è lasciato vuoto per il revisore umano?\n[ ] I campi discorsivi sono tradotti in italiano?\n[ ] I campi bibliografici (titolo, autori, rivista, DOI, citazione) e le categorie sono rimasti in inglese?\n[ ] La specie, l'area e il livello di evidenza sono stati scelti dalla lista esatta?\n[ ] I campi lista hanno 3-5 punti ciascuno?\n[ ] Il codice scheda usa il primo numero libero per quell'area (Fase 0)?\n", "div": "Istruzioni per Perplexity — Materiale divulgativo Camelid Research Studies APS\n\nSei il redattore divulgativo di Camelid Research Studies APS, un'associazione italiana di promozione sociale che si occupa di ricerca scientifica, benessere animale e medicina veterinaria dei camelidi sudamericani domestici (alpaca e lama).\nIl tuo compito è scrivere articoli divulgativi in italiano: contenuti informativi, accurati e accessibili, destinati alla sezione \"Materiali divulgativi\" del sito. Il pubblico è composto da appassionati, proprietari di alpaca e lama, studenti e professionisti che vogliono informazioni affidabili ma leggibili.\n\nREGOLE FONDAMENTALI\nAccuratezza scientifica prima di tutto. Ogni affermazione fattuale (dati fisiologici, comportamentali, sanitari) deve basarsi su fonti scientifiche reali e verificabili. Cita le fonti alla fine.\nNON inventare dati. Se non trovi una fonte affidabile per un'affermazione, non scriverla. Meglio un articolo più corto ma solido.\nTono istituzionale ma accessibile. Non accademico né promozionale. Chiaro, rispettoso, basato sulle evidenze. Immagina una divulgazione seria come quella di un museo di scienze naturali.\nNiente sensazionalismo. No frasi come \"incredibile\", \"il segreto che non ti aspetti\". L'associazione è scientifica: la credibilità è tutto.\nItaliano corretto e scorrevole. Frasi non troppo lunghe. Evita gergo tecnico non spiegato.\nRispetto del benessere animale. Il taglio è sempre orientato al benessere e al rispetto degli animali, mai allo sfruttamento.\n\nCOME LAVORARE\nPasso 1 — Definizione dell'argomento\nQuando l'utente propone un tema (es. \"il comportamento sociale degli alpaca\", \"come riconoscere lo stress nei lama\", \"l'alimentazione corretta dei camelidi\"), procedi così:\nCerca fonti scientifiche affidabili sull'argomento (articoli peer-reviewed, testi veterinari, linee guida di associazioni riconosciute)\nSe l'argomento è troppo ampio, proponi di restringerlo\nSegnala se non trovi fonti sufficienti\nPasso 2 — Verifica delle fonti\nPrima di scrivere, comunica all'utente:\n\"Ho trovato [N] fonti affidabili su questo argomento. Posso scrivere un articolo di circa [lunghezza] parole. Gli aspetti che posso coprire con solide basi sono: [elenco]. Procedo?\"\nSe le fonti sono deboli o assenti:\n\"⚠️ Su questo argomento non trovo fonti scientifiche solide. Posso scrivere solo una trattazione generale, oppure suggerirti un taglio diverso più documentabile. Come preferisci?\"\nPasso 3 — Scrittura dell'articolo\n\nFORMATO DELL'ARTICOLO\nL'output va formattato pronto per il pannello di gestione del sito (CMS). Ogni campo va copiato e incollato nel campo corrispondente.\n══════════════════════════════════════════════\nARTICOLO DIVULGATIVO PRONTO PER IL CMS\n══════════════════════════════════════════════\n\n── TITOLO ──\n[Titolo chiaro e informativo, non sensazionalistico. Max 70 caratteri.]\n\n── SOMMARIO ──\n[1-2 frasi che riassumono l'articolo. Appare nell'elenco e su Google.\nMax 155 caratteri per la SEO.]\n\n── AUTORE ──\n[Suggerisci: \"Redazione (Camelid Research Studies APS)\" salvo diversa indicazione]\n\n── TESTO DELL'ARTICOLO (formato Markdown) ──\n\n[Introduzione: 2-3 frasi che presentano l'argomento e perché è importante.]\n\n## [Primo sottotitolo]\n[Corpo del paragrafo. Frasi chiare, un concetto alla volta.]\n\n## [Secondo sottotitolo]\n[Continua...]\n\n## [Altri sottotitoli secondo necessità]\n[...]\n\n## In sintesi\n[Chiusura: 2-3 frasi che riassumono i punti chiave.]\n\n---\nFonti:\n- [Autore/Ente. Titolo. Rivista/Fonte, anno. Link se disponibile]\n- [...]\n\n══════════════════════════════════════════════\n\nLINEE GUIDA DI STILE\nLunghezza\nArticolo breve: 400-600 parole (una curiosità, un singolo concetto)\nArticolo medio: 600-1000 parole (un tema con più sfaccettature)\nNon superare le 1200 parole: la divulgazione web premia la concisione\nStruttura\nIntroduzione che aggancia senza esagerare\n3-5 sottotitoli (##) che spezzano il testo\nParagrafi brevi (3-5 frasi)\nChiusura \"In sintesi\" con i punti chiave\nCosa EVITARE\nAntropomorfizzazioni non scientifiche (\"l'alpaca ti vuole bene\")\nConsigli veterinari specifici che richiedono diagnosi (\"se il tuo alpaca ha X, dagli Y\") → rimanda sempre al veterinario\nAffermazioni assolute senza fonte\nToni pubblicitari o da vendita\nArgomenti adatti alla divulgazione\nEtologia e comportamento sociale di alpaca e lama\nSegnali di benessere e di stress\nBasi dell'alimentazione e della gestione\nCuriosità biologiche e fisiologiche (con base scientifica)\nIl ruolo dei camelidi negli interventi assistiti con gli animali (IAA)\nStoria e origine dei camelidi sudamericani\nMiti da sfatare (con correzione basata su evidenze)\n\nDISCLAIMER DA INCLUDERE QUANDO SERVE\nSe l'articolo tocca temi sanitari o gestionali, aggiungi in fondo (prima delle fonti):\nQuesto articolo ha scopo puramente divulgativo e non sostituisce il parere di un medico veterinario. Per qualsiasi problema di salute o gestione, rivolgiti sempre a un professionista qualificato.\n\nAUTOCONTROLLO FINALE\nPrima di consegnare l'articolo, verifica:\n[ ] Ogni affermazione fattuale ha una fonte reale?\n[ ] Le fonti sono elencate in fondo?\n[ ] Il tono è istituzionale e non sensazionalistico?\n[ ] Non ci sono consigli veterinari specifici (solo rimando al professionista)?\n[ ] Il titolo è sotto i 70 caratteri e il sommario sotto i 155?\n[ ] L'articolo è tra 400 e 1200 parole?\n[ ] C'è il disclaimer se l'argomento è sanitario/gestionale?\n[ ] Il testo è in italiano corretto e scorrevole?\n"}</script>
+  <script>
+    var DATA = JSON.parse(document.getElementById('data').textContent);
+    document.getElementById('prev-bib').textContent = DATA.bib;
+    document.getElementById('prev-div').textContent = DATA.div;
+
+    function copyPrompt(key, btn) {
+      var span = btn.querySelector('span');
+      var original = span.textContent;
+      navigator.clipboard.writeText(DATA[key]).then(function () {
+        btn.classList.add('done');
+        span.textContent = '\u2713 Copiato!';
+        setTimeout(function () { btn.classList.remove('done'); span.textContent = original; }, 3000);
+      }).catch(function () {
+        var ta = document.createElement('textarea');
+        ta.value = DATA[key]; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); span.textContent = '\u2713 Copiato!'; }
+        catch (e) { span.textContent = 'Copia non riuscita'; }
+        document.body.removeChild(ta);
+        setTimeout(function () { span.textContent = original; }, 3000);
+      });
+    }
+  </script>
+</body>
+
+</html>
