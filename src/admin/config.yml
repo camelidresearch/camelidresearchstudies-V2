@@ -114,6 +114,7 @@ collections:
       - { name: volume, label: Volume, widget: string, required: false, i18n: duplicate }
       - { name: pages, label: Pagine, widget: string, required: false, i18n: duplicate }
       - { name: doi, label: DOI, widget: string, i18n: duplicate }
+      - { name: pmcid, label: "PMCID (se manca il DOI)", widget: string, required: false, i18n: duplicate, hint: "Es. PMC4231801 — usato solo se il DOI non esiste" }
       - name: species
         label: Specie
         widget: select

@@ -21,12 +21,12 @@ layout: base.njk
     {% if authors %}<p class="lead" style="max-width:none;font-style:italic">{{ authors }}</p>{% endif %}
 
     <div class="bib-meta">
-      {% if journal %}<div class="bib-meta-item"><span class="bib-meta-label">Rivista</span><span class="bib-meta-value">{{ journal }}{% if volume %} · Vol.&nbsp;{{ volume }}{% endif %}{% if pages %} · pp.&nbsp;{{ pages }}{% endif %}</span></div>{% endif %}
-      {% if year %}<div class="bib-meta-item"><span class="bib-meta-label">Anno</span><span class="bib-meta-value">{{ year }}</span></div>{% endif %}
-      {% if doi %}<div class="bib-meta-item"><span class="bib-meta-label">DOI</span><span class="bib-meta-value"><a href="https://doi.org/{{ doi }}" target="_blank" rel="noopener">{{ doi }}</a></span></div>{% endif %}
-      {% if species %}<div class="bib-meta-item"><span class="bib-meta-label">Specie</span><span class="bib-meta-value">{{ species }}</span></div>{% endif %}
-      {% if area %}<div class="bib-meta-item"><span class="bib-meta-label">Area</span><span class="bib-meta-value">{{ area }}</span></div>{% endif %}
-      {% if evidence_level %}<div class="bib-meta-item"><span class="bib-meta-label">Evidenza</span><span class="bib-meta-value">{{ evidence_level }}</span></div>{% endif %}
+      {% if journal %}<div class="bib-meta-item"><span class="bib-meta-label">{{ T.biblioteca.rivista }}</span><span class="bib-meta-value">{{ journal }}{% if volume %} · Vol.&nbsp;{{ volume }}{% endif %}{% if pages %} · pp.&nbsp;{{ pages }}{% endif %}</span></div>{% endif %}
+      {% if year %}<div class="bib-meta-item"><span class="bib-meta-label">{{ T.biblioteca.anno }}</span><span class="bib-meta-value">{{ year }}</span></div>{% endif %}
+      {% if doi %}<div class="bib-meta-item"><span class="bib-meta-label">DOI</span><span class="bib-meta-value"><a href="https://doi.org/{{ doi }}" target="_blank" rel="noopener">{{ doi }}</a></span></div>{% elif pmcid %}<div class="bib-meta-item"><span class="bib-meta-label">PMCID</span><span class="bib-meta-value"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{ pmcid }}/" target="_blank" rel="noopener">{{ pmcid }}</a></span></div>{% endif %}
+      {% if species %}<div class="bib-meta-item"><span class="bib-meta-label">{{ T.biblioteca.specie }}</span><span class="bib-meta-value">{{ species }}</span></div>{% endif %}
+      {% if area %}<div class="bib-meta-item"><span class="bib-meta-label">{{ T.biblioteca.area }}</span><span class="bib-meta-value">{{ area }}</span></div>{% endif %}
+      {% if evidence_level %}<div class="bib-meta-item"><span class="bib-meta-label">{{ T.biblioteca.evidenza }}</span><span class="bib-meta-value">{{ evidence_level }}</span></div>{% endif %}
     </div>
   </div>
 </header>
@@ -40,11 +40,11 @@ layout: base.njk
         <div class="bib-evidence-inner">
           <div class="bib-evidence-badge level-{{ evidence_score or 1 }}">{{ evidence_score or "1" }}</div>
           <div class="bib-evidence-type">{{ evidence_level }}</div>
-          <div class="bib-evidence-label">Livello di evidenza</div>
+          <div class="bib-evidence-label">{{ T.biblioteca.livello_evidenza }}</div>
         </div>
       </div>
       <div class="bib-glance-points">
-        <h3>Colpo d'occhio</h3>
+        <h3>{{ T.biblioteca.colpo_occhio }}</h3>
         <ul>
           {% for point in at_glance %}<li>{{ point }}</li>{% endfor %}
         </ul>
@@ -160,7 +160,7 @@ layout: base.njk
           <div class="bib-qr-svg">
             {% qrcode site.url + page.url %}
           </div>
-          <div class="bib-qr-label">Link alla scheda</div>
+          <div class="bib-qr-label">{{ T.biblioteca.link_scheda }}</div>
           <div class="bib-qr-url"><a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a></div>
         </div>
       </div>
@@ -174,9 +174,9 @@ layout: base.njk
     <div class="actions bib-no-print" style="margin-top:1.5rem">
       <button class="btn-primary" onclick="window.print()" type="button">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Scarica PDF
+        {{ T.biblioteca.scarica_pdf }}
       </button>
-      <a class="btn-outline" href="/risorse/">&larr; Tutte le risorse</a>
+      <a class="btn-outline" href="{{ '/risorse/' | locale_url }}">&larr; {{ T.biblioteca.tutte_risorse }}</a>
     </div>
   </div>
 </section>
