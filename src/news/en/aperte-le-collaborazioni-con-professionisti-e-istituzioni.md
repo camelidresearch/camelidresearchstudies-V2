@@ -3,7 +3,7 @@ title: Open collaborations with professionals and institutions
 date: 2026-07-11
 autore: camilla
 sommario: Camelid Research Studies APS invites veterinarians, universities, research centers, and breeders to build together a scientific network dedicated to camelids.
-immagine: /assets/img/Articolo 1.jpeg
+immagine: /assets/img/Articolo-1.jpeg
 immagine_alt: Alpaca in the middle of the woods
 ---
 

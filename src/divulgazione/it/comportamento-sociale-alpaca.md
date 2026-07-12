@@ -2,7 +2,7 @@
 title: Il comportamento sociale degli alpaca
 date: 2026-07-10
 autore: redazione
-sommario: '"Gli alpaca sono animali profondamente sociali: capire come vivono in gruppo è il primo passo per garantirne il benessere."'
+sommario: 'Gli alpaca sono animali profondamente sociali: capire come vivono in gruppo è il primo passo per garantirne il benessere.'
 immagine: null
 immagine_alt: ''
 ---

@@ -3,7 +3,7 @@ title: Aperte le collaborazioni con professionisti e istituzioni
 date: 2026-07-11
 autore: camilla
 sommario: Camelid Research Studies APS invita veterinari, università, centri di ricerca e allevatori a costruire insieme una rete scientifica dedicata ai camelidi.
-immagine: /assets/img/Articolo 1.jpeg
+immagine: /assets/img/Articolo-1.jpeg
 immagine_alt: Alpaca in mezzo al bosco
 ---
 

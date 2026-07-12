@@ -2,5 +2,8 @@
   "layout": "news-article.njk",
   "lang": "en",
   "hideHeader": true,
-  "permalink": "/en/risorse/news/{{ page.fileSlug }}/"
+  "permalink": "/en/risorse/news/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "description": "{{ sommario }}"
+  }
 }

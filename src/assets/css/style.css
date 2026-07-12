@@ -2065,3 +2065,10 @@ footer.site-footer {
     color: #3a7175 !important
   }
 }
+/* Skip-link accessibilità: visibile solo con focus da tastiera */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:1000;
+  background:var(--accent-deep);color:#fff;padding:12px 20px;
+  border-radius:0 0 8px 0;font-weight:600;text-decoration:none;
+}
+.skip-link:focus{left:0}
