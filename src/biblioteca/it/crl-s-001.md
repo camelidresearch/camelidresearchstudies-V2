@@ -7,6 +7,7 @@ year: 2014
 volume: '55'
 pages: 1153-1159
 doi: 10.4141/CJVR2014-108
+pmcid: 10.4141/CJVR2014-108
 species: Alpaca & Llama
 area: Surgery
 evidence_level: Cohort Study
