@@ -13,6 +13,13 @@
       "photo": "/assets/img/alessia-ciaramelli.jpg",
       "initials": "AC",
       "bio": ""
+    },
+    {
+      "name": "Dr.ssa Lisa Esclapon de Villeneuve",
+      "role": "Tesoriere",
+      "photo": "/assets/img/lisa-esclapon-de-villeneuve.jpeg",
+      "initials": "LE",
+      "bio": ""
     }
   ]
 }
